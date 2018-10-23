@@ -5,58 +5,78 @@ using UnityEngine;
 public class DumpsterTrigger : MonoBehaviour {
     public GameObject playerObject;
     public float diveAnimationSeconds;
+    public BoxCollider2D dumpsterCollider;
 
     private bool playerOnDumpster;
-    private bool playerFrozen;
+    private Rigidbody2D playerRigidBody;
+    private SpriteRenderer playerSprite;
 
     // Use this for initialization
     void Start () {
-		
+        playerRigidBody = playerObject.GetComponent<Rigidbody2D>();
+        playerSprite = playerObject.GetComponent<SpriteRenderer>();
+
+        dumpsterCollider = GetComponent<BoxCollider2D>();
 	}
+
+    private void FixedUpdate()
+    {
+        if (playerOnDumpster && Input.GetButtonDown("Interact")) { // Interact button is currently "e"
+            Debug.Log("Player interacted with dumpster.");
+            OnDumpsterInteract();
+        } 
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.attachedRigidbody.gameObject == playerObject)
+        if (collision.attachedRigidbody == playerRigidBody)
         { //Need to make sure only the player can trigger the animation
             Debug.Log("Player jumped onto dumpster!");
             playerOnDumpster = true;
 
         }
     }
-
-    private void FixedUpdate()
-    {
-        if (playerOnDumpster && Input.GetButtonDown("Interact")) { // Interact button is currently "e"
-            Debug.Log("Player interacted with  dumpster.");
-            DumpsterDive();
-        } 
-    }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.attachedRigidbody.gameObject == playerObject)
+        if (collision.attachedRigidbody == playerRigidBody)
         {
             Debug.Log("Player left dumpster");
             playerOnDumpster = false;
         }
     }
 
-    private void DumpsterDive()
+    private void OnDumpsterInteract()
     {
-        
-        StartCoroutine(FreezeTimer());
-        StopCoroutine(FreezeTimer());        
+        StartCoroutine(DoDiveAnimation());
+        StopCoroutine(DoDiveAnimation());        
     }
 
-    IEnumerator FreezeTimer()
+    private IEnumerator DoDiveAnimation()
     {
-        playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-        Color temp = playerObject.GetComponent<SpriteRenderer>().color;
-        playerObject.GetComponent<SpriteRenderer>().color = new Color(0,0,0,0);
-        Debug.Log("Player is now frozen");
+        playerRigidBody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        Vector3 oldPlayerLocation = playerObject.transform.position;
+        dumpsterCollider.enabled = false;
+        Debug.Log("Player is now in dumpster");
+
         yield return new WaitForSeconds(diveAnimationSeconds);
-        playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-        playerObject.GetComponent<SpriteRenderer>().color = temp;
+
+        dumpsterCollider.enabled = true;
+        playerObject.transform.position = oldPlayerLocation;
+        playerRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        Debug.Log("Player can move again.");
+    }
+
+    private IEnumerator FreezeAndDisappear() // Old animation upon interacting with dumpster
+    {
+        playerRigidBody.constraints = RigidbodyConstraints2D.FreezeAll;
+        Color colorBackup = playerObject.GetComponent<SpriteRenderer>().color;
+        playerSprite.color = new Color(0, 0, 0, 0);
+        Debug.Log("Player is now frozen");
+
+        yield return new WaitForSeconds(diveAnimationSeconds);
+
+        playerRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        playerSprite.color = colorBackup;
         Debug.Log("Player can move again.");
     }
 
