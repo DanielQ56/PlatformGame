@@ -1,8 +1,8 @@
-/*
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Web.UI;
+//using System.Web.UI;
 
 public class Powerups : MonoBehaviour {
 
@@ -138,7 +138,7 @@ public class Powerups : MonoBehaviour {
     GameObject player;
     float pWidth;
     float pHeight;
-*/
+
     /*Notes: 
      I wasn't sure how to get the individual player stats or how to interact with the player in that matter.
      I just assumed there was a player script but I can adjust/fix that later when we get together on friday. 
@@ -148,7 +148,7 @@ public class Powerups : MonoBehaviour {
          */
 
 
-/*
+
 	// Use this for initialization
     //creates and stores all the powerups for easier access and loads in the sprite for each (I was thinking
     //when the player picks up a powerup the icon for it will appear on the top of the player's head to show
@@ -198,4 +198,4 @@ public class Powerups : MonoBehaviour {
             powerRenderer.transform.position += vect;
     }
 }
-*/
+
