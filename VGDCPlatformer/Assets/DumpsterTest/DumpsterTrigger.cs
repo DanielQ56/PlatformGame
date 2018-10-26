@@ -3,25 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DumpsterTrigger : MonoBehaviour {
-    public GameObject playerObject;
     public float diveAnimationSeconds;
-    public BoxCollider2D dumpsterCollider;
 
-    private bool playerOnDumpster;
+    // MAKE SURE PLAYER OBJECT HAS "Player" TAG!
+    private GameObject playerObject;
     private Rigidbody2D playerRigidBody;
     private SpriteRenderer playerSprite;
+    private bool playerOnDumpster;
+
+    private BoxCollider2D dumpsterCollider;
+
+
+    void GetPlayerComponents(GameObject playerObject)
+    {
+        playerRigidBody = playerObject.GetComponent<Rigidbody2D>();
+        playerSprite = playerObject.GetComponent<SpriteRenderer>();
+    }
 
     // Use this for initialization
     void Start () {
-        playerRigidBody = playerObject.GetComponent<Rigidbody2D>();
-        playerSprite = playerObject.GetComponent<SpriteRenderer>();
+        playerObject = GameObject.FindGameObjectWithTag("Player");
+        GetPlayerComponents(playerObject);
 
-        dumpsterCollider = GetComponent<BoxCollider2D>();
+        dumpsterCollider = GetComponent<BoxCollider2D>(); // For DoDiveAnimation()
 	}
 
     private void FixedUpdate()
     {
-        if (playerOnDumpster && Input.GetButtonDown("Vertical") && Input.GetAxisRaw("Vertical") < 0) { // Interact button is currently "e"
+        if (playerOnDumpster && Input.GetButtonDown("Vertical") && Input.GetAxisRaw("Vertical") < 0) // Button is currently "s"
+        { 
             Debug.Log("Player interacted with dumpster.");
             OnDumpsterInteract();
         } 
@@ -29,16 +39,15 @@ public class DumpsterTrigger : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.attachedRigidbody == playerRigidBody)
-        { //Need to make sure only the player can trigger the animation
+        if (collision.tag == "Player") // Need to make sure only the player can trigger the animation
+        { 
             Debug.Log("Player jumped onto dumpster!");
             playerOnDumpster = true;
-
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.attachedRigidbody == playerRigidBody)
+        if (collision.tag == "Player")
         {
             Debug.Log("Player left dumpster");
             playerOnDumpster = false;
@@ -48,10 +57,33 @@ public class DumpsterTrigger : MonoBehaviour {
     private void OnDumpsterInteract()
     {
         StartCoroutine(FreezeAndDisappear());
-        StopCoroutine(FreezeAndDisappear());        
+        StopCoroutine(FreezeAndDisappear());
+        givePowerUp();   
     }
 
-    private IEnumerator DoDiveAnimation()
+    private void givePowerUp() // Placeholder for now 
+    {
+
+    }
+
+    private IEnumerator FreezeAndDisappear() // Current animation upon "diving" into dumpster; may be replaced by DoDiveAnimation later
+    {
+        playerRigidBody.constraints = RigidbodyConstraints2D.FreezeAll;
+        Color colorBackup = playerSprite.color;
+        playerSprite.color = new Color(0, 0, 0, 0);
+        Debug.Log("Player is now frozen");
+
+        yield return new WaitForSeconds(diveAnimationSeconds);
+
+        playerRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        playerSprite.color = new Color(1, 1, 1, 1);
+        Debug.Log("Player can move again.");
+    }
+
+
+
+
+    private IEnumerator DoDiveAnimation() // Polishing this up. Not sure if it'll be implemented in the future.
     {
         playerRigidBody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         Vector3 oldPlayerLocation = playerObject.transform.position;
@@ -66,19 +98,7 @@ public class DumpsterTrigger : MonoBehaviour {
         Debug.Log("Player can move again.");
     }
 
-    private IEnumerator FreezeAndDisappear() // Old animation upon interacting with dumpster
-    {
-        playerRigidBody.constraints = RigidbodyConstraints2D.FreezeAll;
-        Color colorBackup = playerObject.GetComponent<SpriteRenderer>().color;
-        playerSprite.color = new Color(0, 0, 0, 0);
-        Debug.Log("Player is now frozen");
 
-        yield return new WaitForSeconds(diveAnimationSeconds);
-
-        playerRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
-        playerSprite.color = new Color(1, 1, 1, 1);
-        Debug.Log("Player can move again.");
-    }
 
 
 }

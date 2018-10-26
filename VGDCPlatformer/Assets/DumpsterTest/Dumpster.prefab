@@ -9,20 +9,20 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1861939771805216}
+  m_RootGameObject: {fileID: 1808730868714360}
   m_IsPrefabAsset: 1
---- !u!1 &1861939771805216
+--- !u!1 &1808730868714360
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4917088726613760}
-  - component: {fileID: 212005791753291864}
-  - component: {fileID: 61254192570230018}
-  - component: {fileID: 61136660439863272}
-  - component: {fileID: 114321692815350626}
+  - component: {fileID: 4602695402452134}
+  - component: {fileID: 212019716379274712}
+  - component: {fileID: 61675800807163586}
+  - component: {fileID: 61363873498313664}
+  - component: {fileID: 114054205379914282}
   m_Layer: 8
   m_Name: Dumpster
   m_TagString: environment
@@ -30,50 +30,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4917088726613760
+--- !u!4 &4602695402452134
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1861939771805216}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.07, y: 0.96, z: 0}
+  m_GameObject: {fileID: 1808730868714360}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.7416234, y: -0.6708453, z: 0.025390625}
   m_LocalScale: {x: 4.6209373, y: 3.2780616, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61136660439863272
+--- !u!61 &61363873498313664
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1861939771805216}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.00973177, y: 0.3120944}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 0.64, y: 0.64}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.55241406, y: 0.084403515}
-  m_EdgeRadius: 0
---- !u!61 &61254192570230018
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1861939771805216}
+  m_GameObject: {fileID: 1808730868714360}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 3a119dd6361ef0a47a59b1bc9eea9bb8, type: 2}
@@ -93,27 +68,49 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!114 &114321692815350626
+--- !u!61 &61675800807163586
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1808730868714360}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00973177, y: 0.3120944}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.55241406, y: 0.084403515}
+  m_EdgeRadius: 0
+--- !u!114 &114054205379914282
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1861939771805216}
+  m_GameObject: {fileID: 1808730868714360}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85576c20b25899d45957b4c2a240762e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObject: {fileID: 1621370096760718, guid: fcb30cc1fc1d3e048bea4c8f19f8f82d,
-    type: 2}
   diveAnimationSeconds: 1
-  dumpsterCollider: {fileID: 61254192570230018}
---- !u!212 &212005791753291864
+--- !u!212 &212019716379274712
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1861939771805216}
+  m_GameObject: {fileID: 1808730868714360}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0

@@ -145,11 +145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RigidBody2D: {fileID: 50397854182239366}
-  horizontalMove: 0
   runSpeed: 40
-  m_Velocity: {x: 0, y: 0, z: 0}
   m_JumpForce: 400
-  m_Grounded: 0
   m_GroundCheck: {fileID: 4388786336313720}
   m_GroundLayer:
     serializedVersion: 2
