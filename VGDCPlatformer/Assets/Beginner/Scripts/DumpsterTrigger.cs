@@ -76,7 +76,7 @@ public class DumpsterTrigger : MonoBehaviour {
         yield return new WaitForSeconds(diveAnimationSeconds);
 
         playerRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
-        playerSprite.color = colorBackup;
+        playerSprite.color = new Color(1, 1, 1, 1);
         Debug.Log("Player can move again.");
     }
 
