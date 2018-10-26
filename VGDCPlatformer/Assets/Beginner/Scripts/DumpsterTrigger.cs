@@ -21,7 +21,7 @@ public class DumpsterTrigger : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        if (playerOnDumpster && Input.GetButtonDown("Interact")) { // Interact button is currently "e"
+        if (playerOnDumpster && Input.GetButtonDown("Vertical") && Input.GetAxisRaw("Vertical") < 0) { // Interact button is currently "e"
             Debug.Log("Player interacted with dumpster.");
             OnDumpsterInteract();
         } 
@@ -47,8 +47,8 @@ public class DumpsterTrigger : MonoBehaviour {
 
     private void OnDumpsterInteract()
     {
-        StartCoroutine(DoDiveAnimation());
-        StopCoroutine(DoDiveAnimation());        
+        StartCoroutine(FreezeAndDisappear());
+        StopCoroutine(FreezeAndDisappear());        
     }
 
     private IEnumerator DoDiveAnimation()
