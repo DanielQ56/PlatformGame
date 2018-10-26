@@ -19,14 +19,12 @@ public class DumpsterTrigger : MonoBehaviour {
 
     private BoxCollider2D dumpsterCollider;
 
-
     void GetPlayerComponents(GameObject playerObject)
     {
         playerRigidBody = playerObject.GetComponent<Rigidbody2D>();
         playerSprite = playerObject.GetComponent<SpriteRenderer>();
     }
 
-    // Use this for initialization
     void Start () {
         playerObject = GameObject.FindGameObjectWithTag("Player");
         GetPlayerComponents(playerObject);
@@ -85,7 +83,7 @@ public class DumpsterTrigger : MonoBehaviour {
         Debug.Log("Player can move again.");
     }
 
-    private IEnumerator DoDiveAnimation() // Polishing this up. Not sure if it'll be implemented in the future.
+    private IEnumerator DoDiveAnimation() // Full diving animation.
     {
         playerRigidBody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         dumpsterCollider.enabled = false;
@@ -101,8 +99,4 @@ public class DumpsterTrigger : MonoBehaviour {
         playerRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
         Debug.Log("Player can move again.");
     }
-
-
-
-
 }
