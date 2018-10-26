@@ -9,6 +9,7 @@ TagManager:
   - floor
   - environment
   - checkPoint
+  - playerAnimator
   layers:
   - Default
   - TransparentFX
