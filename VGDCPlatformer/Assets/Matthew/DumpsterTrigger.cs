@@ -59,8 +59,8 @@ public class DumpsterTrigger : MonoBehaviour {
 
     private void OnDumpsterInteract()
     {
-        StartCoroutine(FreezeAndDisappear());
-        StopCoroutine(FreezeAndDisappear());
+        StartCoroutine(DoDiveAnimation());
+        StopCoroutine(DoDiveAnimation());
         givePowerUp();   
     }
 
