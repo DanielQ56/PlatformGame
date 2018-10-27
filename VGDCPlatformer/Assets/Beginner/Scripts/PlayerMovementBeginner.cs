@@ -8,7 +8,7 @@ public class PlayerMovementBeginner : MonoBehaviour {
 
     [Header("Movement Logic")]
     //=========== Moving Logic ============
-    public float runSpeed = 0f;
+    public static float runSpeed = 40f;
     private float horizontalMove = 0f;
     private Vector3 m_Velocity;
 
@@ -16,7 +16,7 @@ public class PlayerMovementBeginner : MonoBehaviour {
     [Header("Jump Logic")]
 
     //============ Jump Logic ============
-    public float m_JumpForce = 200f;
+    public static float m_JumpForce = 400f;
     private bool m_Grounded;
     public Transform m_GroundCheck;
     public LayerMask m_GroundLayer;

@@ -10,6 +10,8 @@ TagManager:
   - environment
   - checkPoint
   - playerAnimator
+  - Undefined
+  - powerup
   layers:
   - Default
   - TransparentFX

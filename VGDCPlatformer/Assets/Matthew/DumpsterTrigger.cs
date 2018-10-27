@@ -35,7 +35,7 @@ public class DumpsterTrigger : MonoBehaviour {
     {
         if (playerOnDumpster && Input.GetButtonDown("Vertical") && Input.GetAxisRaw("Vertical") < 0) // Button is currently "s"
         { 
-            Debug.Log("Player is diving.");
+            //Debug.Log("Player is diving.");
             OnDumpsterInteract();
         } 
     }
@@ -44,7 +44,7 @@ public class DumpsterTrigger : MonoBehaviour {
     {
         if (collision.gameObject == playerObject) // Need to make sure only the player can trigger the animation
         { 
-            Debug.Log("Player on dumpster trigger");
+            //Debug.Log("Player on dumpster trigger");
             playerOnDumpster = true;
         }
     }
@@ -52,7 +52,7 @@ public class DumpsterTrigger : MonoBehaviour {
     {
         if (collision.gameObject == playerObject)
         {
-            Debug.Log("Player left dumpster trigger");
+            //Debug.Log("Player left dumpster trigger");
             playerOnDumpster = false;
         }
     }
@@ -60,13 +60,13 @@ public class DumpsterTrigger : MonoBehaviour {
     private void OnDumpsterInteract()
     {
         StartCoroutine(DoDiveAnimation());
-        StopCoroutine(DoDiveAnimation());
-        givePowerUp();   
+        StopCoroutine(DoDiveAnimation());  
     }
 
     private void givePowerUp() // Placeholder for now 
     {
-
+        if(!Powerups.hasActivated())
+            Powerups.activate();
     }
 
     private IEnumerator FreezeAndDisappear() // Current animation upon "diving" into dumpster; may be replaced by DoDiveAnimation later
@@ -74,13 +74,13 @@ public class DumpsterTrigger : MonoBehaviour {
         playerRigidBody.constraints = RigidbodyConstraints2D.FreezeAll;
         Color colorBackup = playerSprite.color;
         playerSprite.color = new Color(0, 0, 0, 0);
-        Debug.Log("Player is now frozen");
+        //Debug.Log("Player is now frozen");
 
         yield return new WaitForSeconds(diveIdleSeconds);
 
         playerRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
         playerSprite.color = new Color(1, 1, 1, 1);
-        Debug.Log("Player can move again.");
+        //Debug.Log("Player can move again.");
     }
 
     private IEnumerator DoDiveAnimation() // Full diving animation.
@@ -89,7 +89,7 @@ public class DumpsterTrigger : MonoBehaviour {
         dumpsterCollider.enabled = false;
 
 
-        Debug.Log("Player is diving");
+       // Debug.Log("Player is diving");
 
         yield return new WaitForSeconds(diveIdleSeconds);
 
@@ -97,6 +97,8 @@ public class DumpsterTrigger : MonoBehaviour {
         yield return new WaitForSeconds(diveUpSeconds);
         dumpsterCollider.enabled = true;
         playerRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
-        Debug.Log("Player can move again.");
+        //Debug.Log("Player can move again.");
+
+        givePowerUp();
     }
 }
