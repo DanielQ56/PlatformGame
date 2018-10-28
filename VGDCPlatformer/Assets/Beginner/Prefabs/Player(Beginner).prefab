@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 58527045640804220}
   - component: {fileID: 50397854182239366}
   - component: {fileID: 114934438150059644}
+  - component: {fileID: 114373952174529222}
   m_Layer: 0
   m_Name: Player(Beginner)
   m_TagString: Player
@@ -133,6 +134,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.6}
   m_EdgeRadius: 0
+--- !u!114 &114373952174529222
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1621370096760718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f576bbdbc4c98db4497d4c8af7364c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAmmo: 5
+  startingAmmo: 1
+  ammoFromDumpster: 3
 --- !u!114 &114934438150059644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,8 +160,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RigidBody2D: {fileID: 50397854182239366}
-  runSpeed: 40
-  m_JumpForce: 400
   m_GroundCheck: {fileID: 4388786336313720}
   m_GroundLayer:
     serializedVersion: 2

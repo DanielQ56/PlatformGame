@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61675800807163586}
   - component: {fileID: 114054205379914282}
   m_Layer: 8
-  m_Name: Dumpster
+  m_Name: Dumpster(Ammo)
   m_TagString: environment
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PowerUp: 
+  ammoOrPowerUp: ammo
   diveIdleSeconds: 1
   diveUpForce: 350
   diveUpSeconds: 1

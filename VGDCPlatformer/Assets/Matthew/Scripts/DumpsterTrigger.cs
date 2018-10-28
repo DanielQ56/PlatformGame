@@ -5,6 +5,7 @@ using UnityEngine;
 public class DumpsterTrigger : MonoBehaviour {
     [Header("Powerup Settings")]
     public string PowerUp;
+    public string ammoOrPowerUp; // values are: "ammo" & "powerup"
 
     [Header("Dive Animation")]
     public float diveIdleSeconds;
@@ -17,7 +18,9 @@ public class DumpsterTrigger : MonoBehaviour {
     private SpriteRenderer playerSprite;
     private bool playerOnDumpster;
 
+    private bool dumpsterUsed = false;
     private BoxCollider2D dumpsterCollider;
+
 
     void GetPlayerComponents(GameObject playerObject)
     {
@@ -60,7 +63,24 @@ public class DumpsterTrigger : MonoBehaviour {
     private void OnDumpsterInteract()
     {
         StartCoroutine(DoDiveAnimation());
-        StopCoroutine(DoDiveAnimation());  
+        StopCoroutine(DoDiveAnimation());
+        givePlayerEffect();  
+    }
+
+    private void givePlayerEffect() {
+        if (!dumpsterUsed) 
+        {
+            if (ammoOrPowerUp == "powerup") {
+                Debug.Log("Giving player a powerup");
+                givePowerUp();
+            } else if (ammoOrPowerUp == "ammo") {
+                Debug.Log("Giving player ammo");
+                playerObject.GetComponent<playerAmmo>().giveDumpsterAmmo();
+            }
+            dumpsterUsed = true;
+        } else {
+            Debug.Log("This dumpster has already been used!");
+        }
     }
 
     private void givePowerUp() // Placeholder for now 
@@ -69,7 +89,7 @@ public class DumpsterTrigger : MonoBehaviour {
             Powerups.activate();
     }
 
-    private IEnumerator FreezeAndDisappear() // Current animation upon "diving" into dumpster; may be replaced by DoDiveAnimation later
+    private IEnumerator FreezeAndDisappear() // OLD ANIMATION
     {
         playerRigidBody.constraints = RigidbodyConstraints2D.FreezeAll;
         Color colorBackup = playerSprite.color;
@@ -99,6 +119,6 @@ public class DumpsterTrigger : MonoBehaviour {
         playerRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
         //Debug.Log("Player can move again.");
 
-        givePowerUp();
+        //givePowerUp();
     }
 }
