@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Beginner/_scene/SampleScene.unity
     guid: 032fa15e868e7f24299f482d07aa9bf1
   - enabled: 1
-    path: Assets/Beginner/_scene/Level1.unity
+    path: Assets/Trent/_scene/Level1.unity
     guid: 85c5e2e1246df864bb399141bc43e534
   - enabled: 1
-    path: Assets/Beginner/_scene/GameOver.unity
+    path: Assets/Trent/_scene/GameOver.unity
     guid: 38034fbcaf5bcf2428091ec5f5866795
   m_configObjects: {}
