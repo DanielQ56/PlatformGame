@@ -12,6 +12,8 @@ TagManager:
   - playerAnimator
   - Undefined
   - powerup
+  - Enemy
+  - projectile
   layers:
   - Default
   - TransparentFX
