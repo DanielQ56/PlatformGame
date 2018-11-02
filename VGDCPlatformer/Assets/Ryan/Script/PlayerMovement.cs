@@ -48,6 +48,6 @@ public class PlayerMovement : MonoBehaviour {
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        m_Grounded &= !(groundLayer == collision.gameObject.layer) | m_Grounded;
+        m_Grounded &= !(groundLayer == collision.gameObject.layer);
     }
 }
