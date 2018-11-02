@@ -20,6 +20,7 @@ public class DumpsterTrigger : MonoBehaviour {
 
     private bool dumpsterUsed = false;
     private BoxCollider2D dumpsterCollider;
+    private bool isDiving = false;
 
 
     void GetPlayerComponents(GameObject playerObject)
@@ -36,7 +37,7 @@ public class DumpsterTrigger : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        if (playerOnDumpster && Input.GetButtonDown("Vertical") && Input.GetAxisRaw("Vertical") < 0) // Button is currently "s"
+        if (playerOnDumpster && Input.GetButtonDown("Vertical") && !dumpsterUsed && Input.GetAxisRaw("Vertical") < 0) // Button is currently "s"
         { 
             //Debug.Log("Player is diving.");
             OnDumpsterInteract();
@@ -62,9 +63,11 @@ public class DumpsterTrigger : MonoBehaviour {
 
     private void OnDumpsterInteract()
     {
+        isDiving = true;
         StartCoroutine(DoDiveAnimation());
         StopCoroutine(DoDiveAnimation());
         givePlayerEffect();  
+        isDiving = false;
     }
 
     private void givePlayerEffect() {
@@ -109,7 +112,7 @@ public class DumpsterTrigger : MonoBehaviour {
         dumpsterCollider.enabled = false;
 
 
-       // Debug.Log("Player is diving");
+       Debug.Log("Player is diving");
 
         yield return new WaitForSeconds(diveIdleSeconds);
 
