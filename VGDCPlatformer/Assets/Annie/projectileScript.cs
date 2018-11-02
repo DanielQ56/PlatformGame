@@ -6,7 +6,10 @@ public class projectileScript : MonoBehaviour {
 
 	public float velX = 5f;
 	float velY = 0f;
-	Rigidbody2D rb;
+	Rigidbody2D rb;	
+	public bool facingRight;
+	
+	
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +18,12 @@ public class projectileScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		rb.velocity = new Vector2(velX, velY);
+		//if(facingRight) {
+		//	rb.velocity = new Vector2(velX, velY);
+		//} else {
+		//	rb.velocity = new Vector2(-velX, velY);
+		//}
+		
 	}
 	
 	void OnBecameInvisible() {
