@@ -30,8 +30,8 @@ public class MonsterMovement : MonoBehaviour {
         /* Detect if monster reaches the edge, should turn back. 
          * Right now only support horizontal movement
          */
-        if (transform.position.x <= m_Waypoint1.position.x 
-            || transform.position.x >= m_Waypoint2.position.x) {
+        if (transform.position.x < m_Waypoint1.position.x 
+            || transform.position.x > m_Waypoint2.position.x) {
             direction = -direction;
 
             Vector3 facing = transform.localScale;
