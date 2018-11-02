@@ -5,32 +5,32 @@ using UnityEngine.SceneManagement;
 using System;
 
 public class GameOver : MonoBehaviour {
-    private Transform camTrans;
+    private Camera cam;
     private bool outsideCam;
     private float startTime;
     private float currTime;
 	// Use this for initialization
 	void Start () {
-        camTrans = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         outsideCam = false;
         currTime = 0;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        float offset = Math.Abs(transform.position.x) - Math.Abs(camTrans.position.x) + 10;
+        Vector3 viewPos = cam.WorldToViewportPoint(transform.position);
 		if (transform.position.y <= -6)
         {
             EndGame();
         }
-        if (offset <= 0 && !outsideCam)
+        if (viewPos.x <= 0 && !outsideCam)
         {
             outsideCam = true;
             Debug.Log("Outside Cam");
             outsideCamera();
             startTime = Time.time;
         }
-        else if (offset <= 0 && outsideCam)
+        else if (viewPos.x <= 0 && outsideCam)
         {
             outsideCamera();
         }

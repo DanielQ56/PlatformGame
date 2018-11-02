@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velX: 5
+  facingRight: 0
 --- !u!212 &212181758769672698
 SpriteRenderer:
   m_ObjectHideFlags: 1
