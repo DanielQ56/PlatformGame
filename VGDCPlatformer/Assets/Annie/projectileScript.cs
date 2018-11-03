@@ -26,6 +26,14 @@ public class projectileScript : MonoBehaviour {
 		
 	}
 	
+	void OnTriggerEnter2D(Collider2D collid) {
+		Debug.Log("Collision");
+		if(collid.tag != "Player") {
+			Destroy(gameObject);
+		}
+		
+	}
+	
 	void OnBecameInvisible() {
 		Destroy(gameObject);
 	}
