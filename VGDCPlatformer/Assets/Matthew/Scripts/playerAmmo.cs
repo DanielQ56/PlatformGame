@@ -37,6 +37,7 @@ public class playerAmmo : MonoBehaviour {
 		}
 		Debug.Log("New: " + currentAmmo);
 	}
+	
 
 	public void giveDumpsterAmmo() {
 		Debug.Log("giveDumpsterAmmo is running");
@@ -47,5 +48,9 @@ public class playerAmmo : MonoBehaviour {
 		}
 	}
 
+	public void decreaseAmmo(int amount) {
+		currentAmmo -= amount;
+	}
+	
 
 }
