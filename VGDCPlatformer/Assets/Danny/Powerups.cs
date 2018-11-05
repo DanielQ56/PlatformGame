@@ -81,14 +81,15 @@ public class Powerups : MonoBehaviour {
     Powerup currentPower;
 
     // Use this for initialization
-    void Start () {
+    void Start() {
         setPowers();
         randPower();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update() {
 		if(activated && !finished)
+        
         {
             if (!started)
             {
@@ -113,6 +114,10 @@ public class Powerups : MonoBehaviour {
 
 
 	}
+
+    public Sprite getCurrentPowerupSprite() {
+        return currentPower.getSprite();
+    }
 
     private void setSprite()
     {
@@ -150,5 +155,10 @@ public class Powerups : MonoBehaviour {
     public static bool hasActivated()
     {
         return activated;
+    }
+
+    // Needed to display powerup sprite in UI
+    public bool isActive() {
+        return activated && !finished;
     }
 }

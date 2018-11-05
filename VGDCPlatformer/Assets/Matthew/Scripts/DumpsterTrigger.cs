@@ -15,23 +15,14 @@ public class DumpsterTrigger : MonoBehaviour {
     // MAKE SURE PLAYER OBJECT HAS "Player" TAG!
     private GameObject playerObject;
     private Rigidbody2D playerRigidBody;
-    private SpriteRenderer playerSprite;
     private bool playerOnDumpster;
 
     private bool dumpsterUsed = false;
     private BoxCollider2D dumpsterCollider;
-    private bool isDiving = false;
-
-
-    void GetPlayerComponents(GameObject playerObject)
-    {
-        playerRigidBody = playerObject.GetComponent<Rigidbody2D>();
-        playerSprite = playerObject.GetComponent<SpriteRenderer>();
-    }
 
     void Start () {
         playerObject = GameObject.FindGameObjectWithTag("Player");
-        GetPlayerComponents(playerObject);
+        playerRigidBody = playerObject.GetComponent<Rigidbody2D>();
         dumpsterCollider = GetComponent<BoxCollider2D>(); // For DoDiveAnimation()
 	}
 
@@ -39,7 +30,6 @@ public class DumpsterTrigger : MonoBehaviour {
     {
         if (playerOnDumpster && Input.GetButtonDown("Vertical") && !dumpsterUsed && Input.GetAxisRaw("Vertical") < 0) // Button is currently "s"
         { 
-            //Debug.Log("Player is diving.");
             OnDumpsterInteract();
         } 
     }
@@ -48,7 +38,6 @@ public class DumpsterTrigger : MonoBehaviour {
     {
         if (collision.gameObject == playerObject) // Need to make sure only the player can trigger the animation
         { 
-            //Debug.Log("Player on dumpster trigger");
             playerOnDumpster = true;
         }
     }
@@ -56,18 +45,14 @@ public class DumpsterTrigger : MonoBehaviour {
     {
         if (collision.gameObject == playerObject)
         {
-            //Debug.Log("Player left dumpster trigger");
             playerOnDumpster = false;
         }
     }
 
     private void OnDumpsterInteract()
     {
-        isDiving = true;
         StartCoroutine(DoDiveAnimation());
-        StopCoroutine(DoDiveAnimation());
-        givePlayerEffect();  
-        isDiving = false;
+        StopCoroutine(DoDiveAnimation()); 
     }
 
     private void givePlayerEffect() {
@@ -86,24 +71,10 @@ public class DumpsterTrigger : MonoBehaviour {
         }
     }
 
-    private void givePowerUp() // Placeholder for now 
+    private void givePowerUp() 
     {
         if(!Powerups.hasActivated())
             Powerups.activate();
-    }
-
-    private IEnumerator FreezeAndDisappear() // OLD ANIMATION
-    {
-        playerRigidBody.constraints = RigidbodyConstraints2D.FreezeAll;
-        Color colorBackup = playerSprite.color;
-        playerSprite.color = new Color(0, 0, 0, 0);
-        //Debug.Log("Player is now frozen");
-
-        yield return new WaitForSeconds(diveIdleSeconds);
-
-        playerRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
-        playerSprite.color = new Color(1, 1, 1, 1);
-        //Debug.Log("Player can move again.");
     }
 
     private IEnumerator DoDiveAnimation() // Full diving animation.
@@ -111,17 +82,12 @@ public class DumpsterTrigger : MonoBehaviour {
         playerRigidBody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         dumpsterCollider.enabled = false;
 
-
-       Debug.Log("Player is diving");
-
         yield return new WaitForSeconds(diveIdleSeconds);
 
         playerRigidBody.AddForce(new Vector3(0f, diveUpForce, 0f));
+        givePlayerEffect();
         yield return new WaitForSeconds(diveUpSeconds);
         dumpsterCollider.enabled = true;
         playerRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
-        //Debug.Log("Player can move again.");
-
-        //givePowerUp();
     }
 }

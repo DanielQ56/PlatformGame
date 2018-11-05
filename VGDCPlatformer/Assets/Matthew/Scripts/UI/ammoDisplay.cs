@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class ammoDisplay : MonoBehaviour {
 	private Text ammoText;
-	private GameObject playerObject;
+	private playerAmmo ammoComponent;
 
 	// Use this for initialization
 	void Start () {
 		ammoText = GetComponent<Text>();
-		playerObject = GameObject.FindGameObjectWithTag("Player");
+		ammoComponent = GameObject.FindGameObjectWithTag("Player").GetComponent<playerAmmo>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		ammoText.text = "Ammo: " + playerObject.GetComponent<playerAmmo>().getCurrentAmmo();
+		ammoText.text = ammoComponent.getCurrentAmmo().ToString() + " / " + ammoComponent.maxAmmo.ToString();
 	}
 
 }
