@@ -51,23 +51,22 @@ public class DumpsterTrigger : MonoBehaviour {
 
     private void OnDumpsterInteract()
     {
-        StartCoroutine(DoDiveAnimation());
-        StopCoroutine(DoDiveAnimation()); 
+        if (!dumpsterUsed) {
+            dumpsterUsed = true;
+            StartCoroutine(DoDiveAnimation());
+            StopCoroutine(DoDiveAnimation());
+        } else {
+            Debug.Log("Dumpster has been used already!");
+        }
     }
 
-    private void givePlayerEffect() {
-        if (!dumpsterUsed) 
-        {
-            if (ammoOrPowerUp == "powerup") {
-                Debug.Log("Giving player a powerup");
-                givePowerUp();
-            } else if (ammoOrPowerUp == "ammo") {
-                Debug.Log("Giving player ammo");
-                playerObject.GetComponent<playerAmmo>().giveDumpsterAmmo();
-            }
-            dumpsterUsed = true;
-        } else {
-            Debug.Log("This dumpster has already been used!");
+    private void givePlayerEffect() {    
+        if (ammoOrPowerUp == "powerup") {
+            Debug.Log("Giving player a powerup");
+            givePowerUp();
+        } else if (ammoOrPowerUp == "ammo") {
+            Debug.Log("Giving player ammo");
+            playerObject.GetComponent<playerAmmo>().giveDumpsterAmmo();
         }
     }
 
