@@ -5,15 +5,15 @@ using UnityEngine;
 public class fireProjectile : MonoBehaviour {
 
 	public GameObject projectilePrefab;
-	private GameObject player;
+	public GameObject player;
 	private playerAmmo ammoControl;
 	private bool parentFacingRight;
 	public int ammoCount;
 
 	// Use this for initialization
 	void Start () {
-		player = GameObject.Find("Player");
 		ammoControl = player.GetComponent<playerAmmo>();
+		ammoCount = ammoControl.getCurrentAmmo();
 	}
 	
 	// Update is called once per frame

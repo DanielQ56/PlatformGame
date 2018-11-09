@@ -113,48 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &93158309
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 501812274}
-    m_Modifications:
-    - target: {fileID: 4218570399518826, guid: b5d6df9ed4f7522479df25e91d7fb879, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 4218570399518826, guid: b5d6df9ed4f7522479df25e91d7fb879, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4218570399518826, guid: b5d6df9ed4f7522479df25e91d7fb879, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.057686746
-      objectReference: {fileID: 0}
-    - target: {fileID: 4218570399518826, guid: b5d6df9ed4f7522479df25e91d7fb879, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4218570399518826, guid: b5d6df9ed4f7522479df25e91d7fb879, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4218570399518826, guid: b5d6df9ed4f7522479df25e91d7fb879, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4218570399518826, guid: b5d6df9ed4f7522479df25e91d7fb879, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4218570399518826, guid: b5d6df9ed4f7522479df25e91d7fb879, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b5d6df9ed4f7522479df25e91d7fb879, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1001 &205897903
 Prefab:
   m_ObjectHideFlags: 0
@@ -282,79 +240,49 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4724451580023610, guid: ca245e6841e277446968158966a723a1, type: 2}
+    - target: {fileID: 4107660186265850, guid: 1c79b9fc87d3fae45b134b08a207dc7b, type: 2}
       propertyPath: m_LocalPosition.x
       value: -8.04
       objectReference: {fileID: 0}
-    - target: {fileID: 4724451580023610, guid: ca245e6841e277446968158966a723a1, type: 2}
+    - target: {fileID: 4107660186265850, guid: 1c79b9fc87d3fae45b134b08a207dc7b, type: 2}
       propertyPath: m_LocalPosition.y
       value: -1.08
       objectReference: {fileID: 0}
-    - target: {fileID: 4724451580023610, guid: ca245e6841e277446968158966a723a1, type: 2}
+    - target: {fileID: 4107660186265850, guid: 1c79b9fc87d3fae45b134b08a207dc7b, type: 2}
       propertyPath: m_LocalPosition.z
       value: -0.111328125
       objectReference: {fileID: 0}
-    - target: {fileID: 4724451580023610, guid: ca245e6841e277446968158966a723a1, type: 2}
+    - target: {fileID: 4107660186265850, guid: 1c79b9fc87d3fae45b134b08a207dc7b, type: 2}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4724451580023610, guid: ca245e6841e277446968158966a723a1, type: 2}
+    - target: {fileID: 4107660186265850, guid: 1c79b9fc87d3fae45b134b08a207dc7b, type: 2}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4724451580023610, guid: ca245e6841e277446968158966a723a1, type: 2}
+    - target: {fileID: 4107660186265850, guid: 1c79b9fc87d3fae45b134b08a207dc7b, type: 2}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4724451580023610, guid: ca245e6841e277446968158966a723a1, type: 2}
+    - target: {fileID: 4107660186265850, guid: 1c79b9fc87d3fae45b134b08a207dc7b, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4724451580023610, guid: ca245e6841e277446968158966a723a1, type: 2}
+    - target: {fileID: 4107660186265850, guid: 1c79b9fc87d3fae45b134b08a207dc7b, type: 2}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 212829955396939446, guid: ca245e6841e277446968158966a723a1,
+    - target: {fileID: 114252659492784160, guid: 1c79b9fc87d3fae45b134b08a207dc7b,
         type: 2}
-      propertyPath: m_Sprite
+      propertyPath: player
       value: 
-      objectReference: {fileID: 21300000, guid: 082984ec0fd0d8048a306ef7c9f42aa6,
-        type: 3}
-    - target: {fileID: 114842849280027526, guid: ca245e6841e277446968158966a723a1,
-        type: 2}
-      propertyPath: startHealth
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 114732015578524942, guid: ca245e6841e277446968158966a723a1,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 280220228}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ca245e6841e277446968158966a723a1, type: 2}
+  m_SourcePrefab: {fileID: 100100000, guid: 1c79b9fc87d3fae45b134b08a207dc7b, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &280220228 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1283767149882042, guid: ca245e6841e277446968158966a723a1,
-    type: 2}
-  m_PrefabInternal: {fileID: 280220227}
---- !u!114 &280220229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 280220228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f576bbdbc4c98db4497d4c8af7364c13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxAmmo: 5
-  startingAmmo: 1
-  ammoFromDumpster: 3
---- !u!4 &501812274 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4724451580023610, guid: ca245e6841e277446968158966a723a1,
+  m_CorrespondingSourceObject: {fileID: 1511562023840318, guid: 1c79b9fc87d3fae45b134b08a207dc7b,
     type: 2}
   m_PrefabInternal: {fileID: 280220227}
 --- !u!1 &712980827 stripped
