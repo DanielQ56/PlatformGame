@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1470850271247134}
-  movSpeed: 2.5
+  movSpeed: 3
   towardIndex: 0
   transforms: []
 --- !u!212 &212394936946554336

@@ -22,9 +22,8 @@ GameObject:
   - component: {fileID: 212304040899925148}
   - component: {fileID: 50519267350780560}
   - component: {fileID: 70503614561407622}
-  - component: {fileID: 114675181618395438}
   m_Layer: 0
-  m_Name: cp0
+  m_Name: Checkpoint
   m_TagString: checkPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,18 +77,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.12385845, y: 0.23422074}
   m_Size: {x: 0.61167336, y: 1.4177394}
   m_Direction: 0
---- !u!114 &114675181618395438
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1469195931023332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f649990e069e41aab9cfd5677a20cc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activate: 1
 --- !u!212 &212304040899925148
 SpriteRenderer:
   m_ObjectHideFlags: 1
