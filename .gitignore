@@ -36,6 +36,6 @@ sysinfo.txt
 *.unitypackage
 
 .DS_Store
-UnityVS/Editor/UnityVS.VersionSpecific.dll
-VGDCPlatformer/Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll
-VGDCPlatformer/Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll.meta
+VGDCPlatformer/Assets/UnityVS
+
+
