@@ -72,8 +72,7 @@ public class DumpsterTrigger : MonoBehaviour {
 
     private void givePowerUp() 
     {
-        if(!Powerups.hasActivated())
-            Powerups.activate();
+        this.GetComponent<Powerups>().givePowerUp();
     }
 
     private IEnumerator DoDiveAnimation() // Full diving animation.

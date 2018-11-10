@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,26 +7,35 @@ public class Powerups : MonoBehaviour {
 
     public class Powerup
     {
-        public Powerup() { }
+        private string name;
+        public Powerup() { name = "Powerup"; }
 
         public virtual Sprite getSprite()
         {
             return null;
         }
-
-        public virtual void change() { }
-        public virtual void revert() { }
+        public virtual string getName() { return name; }
+        public virtual void change(GameObject player) { }
+        public virtual void revert(GameObject player) { }
+        public virtual void fire() { }
     }
 
     public class Jump: Powerup
     {
+        private string name;
         private Sprite s;
         private float extraHeight; 
 
         public Jump(Sprite s)
         {
+            name = "Jump";
             this.s = s;
             extraHeight = 100f;
+        }
+
+        public override string getName()
+        {
+            return name;
         }
 
         public override Sprite getSprite()
@@ -33,26 +43,33 @@ public class Powerups : MonoBehaviour {
             return s;
         }
 
-        public override void change()
+        public override void change(GameObject player)
         {
-            PlayerMovementBeginner.m_JumpForce += extraHeight;
+            player.GetComponent<PlayerMovementBeginner>().m_JumpForce += extraHeight;
         }
 
-        public override void revert()
+        public override void revert(GameObject player)
         {
-            PlayerMovementBeginner.m_JumpForce -= extraHeight;
+            player.GetComponent<PlayerMovementBeginner>().m_JumpForce -= extraHeight;
         }
     }
 
     public class Speed : Powerup
     {
+        private string name;
         private Sprite s;
         private float extraSpeed;
 
         public Speed(Sprite s)
         {
+            name = "Speed";
             this.s = s;
             extraSpeed = 100f;
+        }
+
+        public override string getName()
+        {
+            return name;
         }
 
         public override Sprite getSprite()
@@ -60,105 +77,123 @@ public class Powerups : MonoBehaviour {
             return s;
         }
 
-        public override void change()
+        public override void change(GameObject player)
         {
-            PlayerMovementBeginner.runSpeed += extraSpeed;
+            player.GetComponent<PlayerMovementBeginner>().runSpeed += extraSpeed;
         }
 
-        public override void revert()
+        public override void revert(GameObject player)
         {
-            PlayerMovementBeginner.runSpeed-= extraSpeed;
+            player.GetComponent<PlayerMovementBeginner>().runSpeed -= extraSpeed;
         }
     }
 
+    public class Health : Powerup
+    {
+        private string name;
+        private Sprite s;
+        private int extraHealth;
 
-    string[] p = { "Jump", "Speed" };
+        public Health(Sprite s)
+        {
+            name = "Health";
+            this.s = s;
+            extraHealth = 1;
+        }
+
+        public override string getName()
+        {
+            return name;
+        }
+
+        public override Sprite getSprite()
+        {
+            return s;
+        }
+        public override void change(GameObject player)
+        {
+            player.GetComponent<playerHealth>().setCurrentHealth(player.GetComponent<playerHealth>().getCurrentHealth() + extraHealth);
+        }
+    }
+
+    public class Attack: Powerup
+    {
+        private string name;
+        private Sprite s;
+
+        public Attack(Sprite s)
+        {
+            name = "Seeking Bullet";
+            this.s = s;
+        }
+
+        public override string getName()
+        {
+            return name;
+        }
+
+        public override Sprite getSprite()
+        {
+            return s;
+        }
+
+        public override void change(GameObject player)
+        {
+            GameObject.FindGameObjectWithTag("SeekingBullet").GetComponent<SeekingBullet>().activate(); 
+        }
+
+        public override void revert(GameObject player)
+        {
+            GameObject.FindGameObjectWithTag("SeekingBullet").GetComponent<SeekingBullet>().deactivate();
+        }
+    }
+
     Dictionary<string, Powerup> powers = new Dictionary<string, Powerup>();
-    public static bool activated = false;
-    bool finished = false;
-    bool started = false;
-    float timer = 10;
+    Dictionary<string, int[]> powerProbs = new Dictionary<string, int[]>();
     Powerup currentPower;
 
     // Use this for initialization
     void Start() {
         setPowers();
-        randPower();
 	}
 	
 	// Update is called once per frame
-	void Update() {
-		if(activated && !finished)
-        
-        {
-            if (!started)
-            {
-                Debug.Log("Started");
-                setSprite();
-                currentPower.change();
-                timer -= Time.deltaTime;
-                started = true;
-            }
-            else if(timer <=0)
-            {
-                Debug.Log("Finished");
-                finished = true;
-                currentPower.revert();
-                revertSprite();
-            }
-            else
-            {
-                timer -= Time.deltaTime;
-            }
-        }
-
-
-	}
-
-    public Sprite getCurrentPowerupSprite() {
-        return currentPower.getSprite();
-    }
-
-    private void setSprite()
-    {
-        GameObject.FindGameObjectWithTag("powerup").GetComponent<SpriteRenderer>().sprite = currentPower.getSprite();
-    }
-
-    private void revertSprite()
-    {
-        GameObject.FindGameObjectWithTag("powerup").GetComponent<SpriteRenderer>().sprite = null;
-    }
+	void Update() { }
 
     private void setPowers()
     {
         powers["Jump"] = new Jump(Resources.Load<Sprite>("PUps/Jump"));
         powers["Speed"] = new Speed(Resources.Load<Sprite>("PUps/Speed"));
+        powers["Health"] = new Health(Resources.Load<Sprite>("PUps/Health"));
+        powers["Attack"] = new Attack(Resources.Load<Sprite>("PUps/Attack"));
+        powerProbs["Speed"] = new int[]{ 0, 1, 2, 3};
+        powerProbs["Jump"] = new int[] { 4, 5, 6 };
+        powerProbs["Attack"] = new int[] { 7, 8 };
+        powerProbs["Health"] = new int[] { 9 };
+
+
     }
 
     private void randPower()
     {
-        currentPower = powers[p[new System.Func<int>(() =>
+        currentPower = powers[new System.Func<string>(() =>
         {
-            int num = (int)(Random.value * p.Length);
-            if (num == p.Length)
-                return num - 1;
-            return num;
-        })()]];
+            int num = (int)Random.Range(0f, 9f);
+            foreach (string p in powerProbs.Keys)
+            {
+                if(powerProbs[p].Contains(num))
+                {
+                    return p;
+                }
+            }
+            return "Speed";
+        })()];
     }
 
-    public static void activate()
+
+    public void givePowerUp()
     {
-        Debug.Log("Activated");
-        activated = true;
-    }
-
-    public static bool hasActivated()
-    {
-        return activated;
-    }
-
-    // Needed to display powerup sprite in UI
-    public bool isActive() {
-        return activated && !finished;
+        randPower();
+        GameObject.FindGameObjectWithTag("Player").GetComponent<playerPower>().newPower(currentPower);
     }
 }

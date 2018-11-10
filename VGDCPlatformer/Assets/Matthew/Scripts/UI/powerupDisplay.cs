@@ -7,9 +7,9 @@ public class powerupDisplay : MonoBehaviour {
 
 	// Use this for initialization
 	private Image panelPowerupImage;
-	private Powerups powerupComponent;
+	private playerPower powerupComponent;
 	void Start () {
-		powerupComponent = GameObject.FindGameObjectWithTag("powerup").GetComponent<Powerups>();
+		powerupComponent = GameObject.FindGameObjectWithTag("Player").GetComponent<playerPower>();
 		panelPowerupImage = GetComponent<Image>();
 	}
 	
@@ -17,7 +17,7 @@ public class powerupDisplay : MonoBehaviour {
 	void Update () {
 		if (powerupComponent.isActive()) {
 		panelPowerupImage.color = new Color(255,255,255,255);
-		panelPowerupImage.sprite = powerupComponent.getCurrentPowerupSprite();
+		panelPowerupImage.sprite = powerupComponent.getCurrentSprite();
 		} else {
 			panelPowerupImage.color = new Color(0,0,0,0);
 			panelPowerupImage.sprite = null;
