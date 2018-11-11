@@ -277,6 +277,16 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 280220228}
+    - target: {fileID: 114252659492784160, guid: 1c79b9fc87d3fae45b134b08a207dc7b,
+        type: 2}
+      propertyPath: timeBetweenProj
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114252659492784160, guid: 1c79b9fc87d3fae45b134b08a207dc7b,
+        type: 2}
+      propertyPath: ammoCount
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c79b9fc87d3fae45b134b08a207dc7b, type: 2}
   m_IsPrefabAsset: 0

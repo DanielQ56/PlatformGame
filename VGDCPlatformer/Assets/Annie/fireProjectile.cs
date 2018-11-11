@@ -9,6 +9,8 @@ public class fireProjectile : MonoBehaviour {
 	private playerAmmo ammoControl;
 	private bool parentFacingRight;
 	public int ammoCount;
+	public float timeBetweenProj = 0.3333f;
+	private float timestamp;
 
 	// Use this for initialization
 	void Start () {
@@ -22,14 +24,12 @@ public class fireProjectile : MonoBehaviour {
 		//if (Input.GetButtonDown("Fire1")) {
 		//	FireProj();
 		//}
-		if (Input.GetMouseButtonDown(0) && ammoCount > 0) {
+		if (Input.GetMouseButtonDown(0) && ammoCount > 0 && Time.time >= timestamp) {
 			Vector2 shootDirection;
 			shootDirection=Camera.main.ScreenToWorldPoint(Input.mousePosition)-transform.position;
 			FireDirectedProj(shootDirection);
 			ammoControl.decreaseAmmo(1);
-			if (ammoCount == 0) {
-				Debug.Log("No more ammo");
-			}
+			timestamp = Time.time + timeBetweenProj;
 		}
 		
 	}
