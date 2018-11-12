@@ -6,18 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Beginner/_scene/SampleScene.unity
+    path: Assets/_scene/VGDCScene.unity
     guid: 032fa15e868e7f24299f482d07aa9bf1
-  - enabled: 1
-    path: Assets/Trent/_scene/Level1.unity
-    guid: 85c5e2e1246df864bb399141bc43e534
-  - enabled: 1
-    path: Assets/Trent/_scene/GameOver.unity
-    guid: 38034fbcaf5bcf2428091ec5f5866795
-  - enabled: 1
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Annie/MenuTutorial.unity
     guid: 1041ca1e04e6c3448acafa7977b0e4a7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Annie/AttackScene_Annie.unity
     guid: 761a5613188440d42b4639662ddfa4ea
+  - enabled: 1
+    path: Assets/_scene/AggregatedScene.unity
+    guid: db0bbd107833648648d8f913a02e54b8
+  - enabled: 1
+    path: Assets/_scene/TransitionScene.unity
+    guid: be11b826fbc254e91965a2ed8d92ad71
   m_configObjects: {}
