@@ -55,7 +55,7 @@ public class DamageTest : MonoBehaviour {
             Rigidbody2D rb2d = collision.gameObject.GetComponent<Rigidbody2D>();
 
             rb2d.velocity = Vector3.zero;
-            //rb2d.AddForce(new Vector2(0, m_PushForce), ForceMode2D.Impulse);
+            rb2d.AddForce(new Vector2(0, m_PushForce), ForceMode2D.Impulse);
         } 
     }
 
