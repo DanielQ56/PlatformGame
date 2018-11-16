@@ -7,6 +7,7 @@ public class fireProjectile : MonoBehaviour {
 	public GameObject projectilePrefab;
 	public GameObject player;
 	private playerAmmo ammoControl;
+	public float launchSpeed = 3f;
 	private bool parentFacingRight;
 	public int ammoCount;
 	public float timeBetweenProj = 0.3333f;
@@ -42,10 +43,10 @@ public class fireProjectile : MonoBehaviour {
 		Clone.GetComponent<projectileScript>().facingRight = parentFacingRight;	
 	}
 	
-	public void FireDirectedProj(Vector3 direct) {
+	public void FireDirectedProj(Vector2 direct) {
 		GameObject Clone;
 		Clone = Instantiate(projectilePrefab, transform.position, transform.rotation);
-		Clone.GetComponent<Rigidbody2D>().velocity = new Vector2 (direct.x, direct.y);
+		Clone.GetComponent<Rigidbody2D>().velocity = new Vector2(direct.x, direct.y).normalized * launchSpeed;
 		
 		
 	}

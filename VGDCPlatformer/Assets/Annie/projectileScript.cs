@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class projectileScript : MonoBehaviour {
 
-	public float velX = 5f;
+	float velX = 5f;
 	float velY = 0f;
 	Rigidbody2D rb;	
 	public bool facingRight;
