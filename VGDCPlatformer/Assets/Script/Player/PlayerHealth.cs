@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -57,5 +58,9 @@ public class PlayerHealth : MonoBehaviour {
 
     }
 
-
+    internal void IncreaseHealthBy(int extraHealth)
+    {
+        int newHealth = currentHealth + extraHealth;
+        currentHealth = newHealth >= maxHealth ? maxHealth : newHealth;
+    }
 }

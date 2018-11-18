@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -58,6 +59,10 @@ public class PlayerAmmo : MonoBehaviour {
 	public void decreaseAmmo(int amount) {
 		currentAmmo -= amount;
 	}
-	
 
+    internal void IncreaseAmmoCountBy(int refillCount)
+    {
+        int newAmmoCount = currentAmmo + refillCount;
+        currentAmmo = newAmmoCount >= maxAmmo ? maxAmmo : newAmmoCount;
+    }
 }

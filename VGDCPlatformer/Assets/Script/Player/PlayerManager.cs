@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerManager : MonoBehaviour {
+public class PlayerManager : MonoBehaviour
+{
 
     private PlayerHealth m_HealthManager;
     private Rigidbody2D m_rb2d;
     public int startHealth = 2;
 
     public float bounceForce = 20f;
-    public float dangerousVelocity = 60f; // When in air and the downward velocity is greater than 40, player dies
-                                          // 40 is about the height of the camera.
+    public float dangerousVelocity = 80f; // When in air and the downward velocity is greater than 80, player dies
+                                          // 80 is about the height of the camera.
 
     public float downwardVelocity;  // Testing purpose
     public Transform SpawnPoint;
@@ -23,7 +24,7 @@ public class PlayerManager : MonoBehaviour {
         m_HealthManager = GetComponent<PlayerHealth>();
         m_rb2d = GetComponent<Rigidbody2D>();
 
-        if (SpawnPoint) 
+        if (SpawnPoint)
         {
             transform.position = SpawnPoint.position;
         }
@@ -56,11 +57,7 @@ public class PlayerManager : MonoBehaviour {
         {
             Debug.Log("reach goal");
 
-            if (SceneManager.GetActiveScene().name != "TransitionScene") {
-                SceneManager.LoadScene("TransitionScene");
-            } else {
-                SceneManager.LoadScene("AggregatedScene");
-            }
+            SceneManager.LoadScene("TransitionScene");
 
         }
     }
