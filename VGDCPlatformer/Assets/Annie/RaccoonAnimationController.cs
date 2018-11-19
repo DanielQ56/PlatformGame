@@ -13,6 +13,7 @@ public class RaccoonAnimationController : MonoBehaviour {
 	// This is a reference to the Animator component
 	private Animator anim;
 
+	private float playerSpeed = 0.1f;
 
 	// We initialize our two references in the Start method
 	void Start() {
@@ -22,23 +23,23 @@ public class RaccoonAnimationController : MonoBehaviour {
 
 	// We use FixedUpdate to do all the animation work
 	void FixedUpdate() {
-
-		// Get the extent to which the player is currently pressing left or right
-		float h = Input.GetAxis("Horizontal");
-
-		//get facingRight from characterController2D
+		//GET PLAYER SPEED 
 		
+		//GET PLAYER FACING RIGHT 
+		
+		// Get the extent to which the player is currently pressing left or right
+		//float h = Input.GetAxis("Horizontal")
 		// Pass in the current velocity of the RigidBody2D
 		// The speed parameter of the Animator now knows
 		// how fast the player is moving and responds accordingly
-		anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+		anim.SetFloat("Speed", 0.1f);
 
 
 		// Check which way the player is facing 
 		// and call reverseImage if neccessary
-		if (h < 0 && !facingRight)
+		if (playerSpeed < 0 && facingRight)
 			reverseImage();
-		else if (h > 0 && facingRight)
+		else if (playerSpeed > 0 && !facingRight)
 			reverseImage();
 
 	}
