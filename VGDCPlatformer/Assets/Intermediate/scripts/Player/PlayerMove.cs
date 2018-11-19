@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerMove : MonoBehaviour {
+public class PlayerMove : MonoBehaviour
+{
 
-    [SerializeField] private float runSpeed;
+    public float runSpeed;
     float horizontalMove = 0f;
     bool jump = false;
     public CharacterController2D controller;
@@ -30,4 +29,13 @@ public class PlayerMove : MonoBehaviour {
         jump = false;
     }
 
+    internal void IncreaseSpeedBy(float speedScaler)
+    {
+        runSpeed += speedScaler;
+    }
+
+    internal void ScaleSpeedBy(float speedScaler)
+    {
+        runSpeed *= speedScaler;
+    }
 }
