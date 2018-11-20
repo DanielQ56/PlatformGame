@@ -136,6 +136,11 @@ public class playerPower : MonoBehaviour {
         return activated && started;
     }
 
+    public float getTimer()
+    {
+        return timer;
+    }
+
 
 
 }
