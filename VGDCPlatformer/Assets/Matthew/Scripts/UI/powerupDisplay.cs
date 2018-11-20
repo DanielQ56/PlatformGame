@@ -11,16 +11,21 @@ public class powerupDisplay : MonoBehaviour {
 	void Start () {
 		powerupComponent = GameObject.FindGameObjectWithTag("Player").GetComponent<playerPower>();
 		panelPowerupImage = GetComponent<Image>();
+		panelPowerupImage.sprite = null;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (powerupComponent.isActive()) {
-		panelPowerupImage.color = new Color(255,255,255,255);
-		panelPowerupImage.sprite = powerupComponent.getCurrentSprite();
+		if (panelPowerupImage.sprite == null) {
+			if (powerupComponent.currentPowerPresent()){
+				panelPowerupImage.color = new Color(255, 255, 255, 255);
+				panelPowerupImage.sprite = powerupComponent.getCurrentPowerSprite();
+			}
 		} else {
-			panelPowerupImage.color = new Color(0,0,0,0);
-			panelPowerupImage.sprite = null;
+			if (!powerupComponent.currentPowerPresent() && !powerupComponent.powerBeingUsedPresent()) {
+				panelPowerupImage.color = new Color(0,0,0,0);
+				panelPowerupImage.sprite = null;
+			}
 		}
 	}
 }

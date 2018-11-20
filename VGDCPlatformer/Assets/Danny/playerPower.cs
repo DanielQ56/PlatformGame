@@ -135,12 +135,30 @@ public class playerPower : MonoBehaviour {
     {
         return activated && started;
     }
-
+    
+     // For duration bar
     public float getTimer()
     {
         return timer;
     }
 
+    // Needed to show current powerup while it hasn't been activated yet
+    public Sprite getCurrentPowerSprite()
+    {
+        return currentPower.getSprite();
+    }
+
+    // Returns if currentPower is NOT null; needed to display powerup while player hasn't it activated yet
+    public bool currentPowerPresent() 
+    {
+        return currentPower != null;
+    }
+
+    // Same reason as currentPowerPresent
+    public bool powerBeingUsedPresent() 
+    {
+        return powerBeingUsed != null;
+    }
 
 
 }
