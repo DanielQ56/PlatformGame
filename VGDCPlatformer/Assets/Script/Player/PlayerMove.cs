@@ -33,10 +33,11 @@ public class PlayerMove : MonoBehaviour {
 
     internal void IncreaseSpeedBy(float speedScaler)
     {
-        runSpeed += speedScaler;
+        runSpeed *= speedScaler;
     }
 
-    internal void ScaleSpeedBy(float speedScaler) {
-        runSpeed *= speedScaler;
+    internal void DecreaseSpeedBy(float speedScaler)
+    {
+        runSpeed /= speedScaler;
     }
 }

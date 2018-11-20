@@ -48,7 +48,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	public void decrementHealth() {
 		if (currentHealth > 0) {
-		currentHealth--;
+		    currentHealth--;
 		}
 	}
 
@@ -61,6 +61,6 @@ public class PlayerHealth : MonoBehaviour {
     internal void IncreaseHealthBy(int extraHealth)
     {
         int newHealth = currentHealth + extraHealth;
-        currentHealth = newHealth >= maxHealth ? maxHealth : newHealth;
+        currentHealth = newHealth >= maxHealth + 1 ? maxHealth + 1: newHealth;
     }
 }
