@@ -10,7 +10,8 @@ public class PlayerPower : MonoBehaviour
     SpriteRenderer playerSprite;
     public bool activated = false;
     public bool started = false;
-    public float timer = 2f;
+    private float timer = 10f;
+    public float defaultTimer;
 
     // Use this for initialization
     void Start()
@@ -28,6 +29,7 @@ public class PlayerPower : MonoBehaviour
             {
                 if (powerBeingUsed == null)
                 {
+                    timer = defaultTimer;
                     powerBeingUsed = currentPower;
                     currentPower = null;
                     activated = true;
@@ -83,8 +85,7 @@ public class PlayerPower : MonoBehaviour
     {
         powerBeingUsed.revert(gameObject);
         revertSprite();
-        timer = 10f;
-        obtainedTime = 2f;
+        timer = defaultTimer;
         activated = false;
         powerBeingUsed = null;
         started = false;
@@ -117,6 +118,7 @@ public class PlayerPower : MonoBehaviour
     {
         alignCenter();
         powerSprite.sprite = powerBeingUsed.getSprite();
+        Invoke("revertSprite", timer / 4);
     }
 
     private void revertSprite()

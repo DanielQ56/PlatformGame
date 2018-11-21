@@ -1646,6 +1646,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114949377669094320, guid: f22344ea66601405196d205d0069046d,
+        type: 2}
+      propertyPath: powerActivateDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114949377669094320, guid: f22344ea66601405196d205d0069046d,
+        type: 2}
+      propertyPath: timer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114949377669094320, guid: f22344ea66601405196d205d0069046d,
+        type: 2}
+      propertyPath: defaultTimer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f22344ea66601405196d205d0069046d, type: 2}
   m_IsPrefabAsset: 0
