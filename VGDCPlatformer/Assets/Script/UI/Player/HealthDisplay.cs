@@ -6,9 +6,12 @@ public class HealthDisplay : MonoBehaviour
     private Text healthText;
     private PlayerHealth healthComponent;
 
+    private int currentHealth;
+
     // Use this for initialization
     void Start()
     {
+        currentHealth = -1;
         healthText = GetComponent<Text>();
         healthComponent = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
     }
@@ -16,6 +19,9 @@ public class HealthDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthText.text = healthComponent.getCurrentHealth().ToString();
+        if (currentHealth != healthComponent.getCurrentHealth()) {
+            currentHealth = healthComponent.getCurrentHealth();
+            healthText.text = currentHealth.ToString();
+        }
     }
 }

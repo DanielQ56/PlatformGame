@@ -19,7 +19,7 @@ public class PowerupDisplay : MonoBehaviour
     {
         if (powerupComponent.isActive())
         {
-            panelPowerupImage.color = new Color(255, 255, 255, 255);
+            panelPowerupImage.color = Color.white;
             panelPowerupImage.sprite = powerupComponent.getCurrentSprite();
         }
         else

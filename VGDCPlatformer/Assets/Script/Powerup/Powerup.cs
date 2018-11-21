@@ -131,11 +131,13 @@ public class Attack : Powerup
 
     public override void change(GameObject player)
     {
+        // TODO 
         //GameObject.FindGameObjectWithTag("SeekingBullet").GetComponent<SeekingBullet>().activate();
     }
 
     public override void revert(GameObject player)
     {
+        // TODO 
         //GameObject.FindGameObjectWithTag("SeekingBullet").GetComponent<SeekingBullet>().deactivate();
     }
 }

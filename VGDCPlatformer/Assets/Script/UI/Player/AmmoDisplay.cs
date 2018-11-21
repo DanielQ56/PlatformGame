@@ -6,9 +6,12 @@ public class AmmoDisplay : MonoBehaviour
     private Text ammoText;
     private PlayerAmmo ammoComponent;
 
+    private int count;
+
     // Use this for initialization
     void Start()
     {
+        count = -1;
         ammoText = GetComponent<Text>();
         ammoComponent = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAmmo>();
     }
@@ -16,7 +19,10 @@ public class AmmoDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ammoText.text = ammoComponent.getCurrentAmmo().ToString() + " / " + ammoComponent.maxAmmo.ToString();
+        if (count != ammoComponent.getCurrentAmmo()) {
+            count = ammoComponent.getCurrentAmmo();
+            ammoText.text = count + " / " + ammoComponent.maxAmmo;
+        }
     }
 
 }

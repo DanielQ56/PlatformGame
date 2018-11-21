@@ -11,22 +11,12 @@ public class PlayerPower : MonoBehaviour
     public bool activated = false;
     public bool started = false;
     public float timer = 2f;
-    float obtainedTime = 2f;
-
 
     // Use this for initialization
     void Start()
     {
         powerSprite = GameObject.FindGameObjectWithTag("powerup").GetComponent<SpriteRenderer>();
         playerSprite = GetComponent<SpriteRenderer>();
-
-        //foreach (SpriteRenderer o in GetComponentsInChildren<SpriteRenderer>()) {
-        //    if (o.tag == "powerup") {
-        //        playerSprite = o;
-        //    }
-        //} 
-        //power = GameObject.FindGameObjectWithTag("powerup");
-        //powerSprite = power.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
