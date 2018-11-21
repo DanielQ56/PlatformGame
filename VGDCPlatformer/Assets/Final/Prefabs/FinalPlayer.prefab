@@ -275,7 +275,7 @@ MonoBehaviour:
     m_Bits: 0
   m_GroundCheck: {fileID: 4403726981279934}
   m_HorizontalCheck: {fileID: 0}
-  m_AirControl: 0
+  m_AirControl: 1
   m_RigidBody2D: {fileID: 0}
   m_FacingRight: 1
   m_Damaged: 0
