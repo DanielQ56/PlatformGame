@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class PlayerMove : MonoBehaviour
-{
+public class PlayerMove : MonoBehaviour {
 
     public float runSpeed;
     float horizontalMove = 0f;
@@ -31,11 +33,11 @@ public class PlayerMove : MonoBehaviour
 
     internal void IncreaseSpeedBy(float speedScaler)
     {
-        runSpeed += speedScaler;
+        runSpeed *= speedScaler;
     }
 
-    internal void ScaleSpeedBy(float speedScaler)
+    internal void DecreaseSpeedBy(float speedScaler)
     {
-        runSpeed *= speedScaler;
+        runSpeed /= speedScaler;
     }
 }

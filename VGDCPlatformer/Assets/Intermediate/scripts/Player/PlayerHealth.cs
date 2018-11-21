@@ -4,67 +4,56 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerHealth : MonoBehaviour
-{
+public class PlayerHealth : MonoBehaviour {
 
-    public int maxHealth;
-    public int invincibilitySeconds;
+	public int maxHealth;
+	public int invincibilitySeconds;
 
-    private int currentHealth;
-    private bool invincibleFrameOn;
+	private int currentHealth;
+	private bool invincibleFrameOn;
 
-    // Use this for initialization
-    void Start()
-    {
-        currentHealth = maxHealth;
-    }
+	// Use this for initialization
+	void Start () {
+		currentHealth = maxHealth;
+	}
 
-    void FixedUpdate()
-    {
-        if (currentHealth == 0)
-        {
-            onDeath();
-        }
-    }
+	void FixedUpdate() {
+		if (currentHealth == 0) {
+			onDeath();
+		}
+	}
 
-    public int getCurrentHealth()
-    {
-        return currentHealth;
-    }
+	public int getCurrentHealth() {
+		return currentHealth;
+	}
 
-    public void setCurrentHealth(int newHealth)
-    {
-        currentHealth = newHealth;
-    }
+	public void setCurrentHealth(int newHealth) {
+		currentHealth = newHealth;
+	}
 
-    public void damagePlayer()
-    {
-        if (!invincibleFrameOn)
-        {
-            decrementHealth();
-            StartCoroutine(DoIFrames());
-            StopCoroutine(DoIFrames());
-        }
-    }
+	public void damagePlayer() {
+		if (!invincibleFrameOn) {
+			decrementHealth();
+			StartCoroutine(DoIFrames());
+			StopCoroutine(DoIFrames());
+		}
+	}
 
-    private IEnumerator DoIFrames()
-    {
-        invincibleFrameOn = true;
-        yield return new WaitForSeconds(invincibilitySeconds);
-        invincibleFrameOn = false;
-    }
+	private IEnumerator DoIFrames()
+	{
+		invincibleFrameOn = true;
+		yield return new WaitForSeconds(invincibilitySeconds);
+		invincibleFrameOn = false;
+	}
 
-    public void decrementHealth()
-    {
-        if (currentHealth > 0)
-        {
-            currentHealth--;
-        }
-    }
+	public void decrementHealth() {
+		if (currentHealth > 0) {
+		    currentHealth--;
+		}
+	}
 
-    private void onDeath()
-    {
-        Debug.Log("You died!");
+	private void onDeath() {
+		Debug.Log("You died!");
         SceneManager.LoadScene("TransitionScene");
 
     }
@@ -72,6 +61,6 @@ public class PlayerHealth : MonoBehaviour
     internal void IncreaseHealthBy(int extraHealth)
     {
         int newHealth = currentHealth + extraHealth;
-        currentHealth = newHealth >= maxHealth ? maxHealth : newHealth;
+        currentHealth = newHealth >= maxHealth + 1 ? maxHealth + 1: newHealth;
     }
 }

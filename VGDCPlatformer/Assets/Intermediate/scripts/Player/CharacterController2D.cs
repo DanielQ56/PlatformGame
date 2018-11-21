@@ -135,4 +135,15 @@ public class CharacterController2D : MonoBehaviour {
     {
         m_OnJumpPad = false;
     }
+
+    // used be power up Jump
+
+    public void IncreaseJumpBy(float extraHeight) {
+        m_JumpForce *= extraHeight;
+    }
+
+    public void DecreaseJumpBy(float extraHeight)
+    {
+        m_JumpForce /= extraHeight;
+    }
 }
