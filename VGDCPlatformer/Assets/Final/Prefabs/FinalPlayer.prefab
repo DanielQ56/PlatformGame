@@ -272,7 +272,7 @@ MonoBehaviour:
   m_MovementSmoothing: 0.05
   m_GroundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_GroundCheck: {fileID: 4403726981279934}
   m_HorizontalCheck: {fileID: 0}
   m_AirControl: 1
