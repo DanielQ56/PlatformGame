@@ -6,7 +6,7 @@ public class fireProjectile : MonoBehaviour {
 
 	public GameObject projectilePrefab;
 	public GameObject player;
-	private playerAmmo ammoControl;
+	private PlayerAmmo ammoControl;
 	public float launchSpeed = 3f;
 	private bool parentFacingRight;
 	public int ammoCount;
@@ -15,7 +15,7 @@ public class fireProjectile : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		ammoControl = player.GetComponent<playerAmmo>();
+		ammoControl = player.GetComponent<PlayerAmmo>();
 		ammoCount = ammoControl.getCurrentAmmo();
 	}
 	
