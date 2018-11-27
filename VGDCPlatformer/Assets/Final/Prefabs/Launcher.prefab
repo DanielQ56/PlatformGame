@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1681703100928452, guid: 606e86bd7f59f0046ba86a2a85fc7bb8,
     type: 2}
-  player: {fileID: 0}
+  player: {fileID: 1801296923040844, guid: 0544e1eebdaf2184f9e24326034a5c66, type: 2}
   launchSpeed: 3
   ammoCount: 0
   timeBetweenProj: 0.3333

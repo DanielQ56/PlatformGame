@@ -16,6 +16,7 @@ public class hitTutorialEnemy : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D collision) {
 		if (collision.tag == "projectile") {
+			Debug.Log("obstacle removed :)");
 			Destroy(gameObject);
 		}
 	}
