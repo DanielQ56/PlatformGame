@@ -20,12 +20,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4434373723954974}
   - component: {fileID: 212181758769672698}
-  - component: {fileID: 114018559344121848}
+  - component: {fileID: 114362635247580456}
   - component: {fileID: 50515573594295156}
   - component: {fileID: 61296366672506880}
   m_Layer: 0
-  m_Name: projectile
-  m_TagString: projectile
+  m_Name: Projectile
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1681703100928452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.504858, y: -0.78808576, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1, y: -0.12, z: 0}
+  m_LocalScale: {x: 0.46878186, y: 0.4219646, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,7 +75,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.01440198, y: 0.014402021}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -86,9 +86,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.11508162, y: 0.121527545}
+  m_Size: {x: 0.96, y: 0.64}
   m_EdgeRadius: 0
---- !u!114 &114018559344121848
+--- !u!114 &114362635247580456
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,9 +96,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1681703100928452}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3bb398cd1537b5408d26654d1ea97f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d961d8f1d0734f6f8d787ecc43f3a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velX: 5
   facingRight: 0
 --- !u!212 &212181758769672698
 SpriteRenderer:
