@@ -55,4 +55,12 @@ public class GameOver : MonoBehaviour {
     {
         SceneManager.LoadScene("GameOver");
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "floor")
+        {
+            Debug.Log("Floor touched");
+            EndGame();
+        }
+    }
 }
