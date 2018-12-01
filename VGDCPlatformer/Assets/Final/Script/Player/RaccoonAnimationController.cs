@@ -5,13 +5,13 @@ using System.Collections;
 public class RaccoonAnimationController : MonoBehaviour {
 
 	private Rigidbody2D rb;
-	private CharacterController2D charControl;
-	private SpriteRenderer spriteRend;
+	//private CharacterController2D charControl;
+	//private SpriteRenderer spriteRend;
 	// This is a reference to the Animator component
 	private Animator anim;
 
 	// Reference to PlayerMove
-	private PlayerMove pMove;
+	//private PlayerMove pMove;
 	
 	private float playerSpeed = 0f;
 	private bool animFacingRight = true;
@@ -20,9 +20,9 @@ public class RaccoonAnimationController : MonoBehaviour {
 	// We initialize our two references in the Start method
 	void Start() {
 		rb = GetComponent<Rigidbody2D>();
-		charControl = GetComponent<CharacterController2D>();
-		spriteRend = GetComponent<SpriteRenderer>();
-		pMove = GetComponent<PlayerMove>();
+		//charControl = GetComponent<CharacterController2D>();
+		//spriteRend = GetComponent<SpriteRenderer>();
+		//pMove = GetComponent<PlayerMove>();
 		anim = GetComponent<Animator>();
 		//animFacingRight = charControl.m_FacingRight;
 	}
