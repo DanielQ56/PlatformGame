@@ -66,7 +66,7 @@ public class DumpsterTrigger : MonoBehaviour {
             givePowerUp();
         } else if (ammoOrPowerUp == "ammo") {
             Debug.Log("Giving player ammo");
-            playerObject.GetComponent<playerAmmo>().giveDumpsterAmmo();
+            playerObject.GetComponent<PlayerAmmo>().giveDumpsterAmmo();
         }
     }
 
@@ -85,6 +85,7 @@ public class DumpsterTrigger : MonoBehaviour {
 
         playerRigidBody.AddForce(new Vector3(0f, diveUpForce, 0f));
         givePlayerEffect();
+        Debug.Log("Finished okay?");
         yield return new WaitForSeconds(diveUpSeconds);
         dumpsterCollider.enabled = true;
         playerRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
