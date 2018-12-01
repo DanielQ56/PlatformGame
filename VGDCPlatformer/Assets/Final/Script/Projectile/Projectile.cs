@@ -28,9 +28,11 @@ public class Projectile : MonoBehaviour {
 		if(collide.tag == "hitbox" || collide.tag == "hurtbox") {
             collide.gameObject.GetComponentInParent<Enemy>().Die();
             OnBecameInvisible();
-        } else if (collide.tag == "floor") {
-            OnBecameInvisible();
-        }
+        } 
+		
+		if(collide.tag != "Player") {
+			Destroy(gameObject);
+		}
 		
 	}
 	
