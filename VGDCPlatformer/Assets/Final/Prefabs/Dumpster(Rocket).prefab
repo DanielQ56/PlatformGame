@@ -20,9 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4833795958325956}
   - component: {fileID: 212249340618931882}
-  - component: {fileID: 61467170631482062}
   - component: {fileID: 61191091171320534}
-  - component: {fileID: 114229357801417566}
+  - component: {fileID: 61467170631482062}
+  - component: {fileID: 61285670394940164}
+  - component: {fileID: 114037989295607728}
   m_Layer: 8
   m_Name: Dumpster(Rocket)
   m_TagString: environment
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1583679173909696}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.2, y: -3, z: 0.025390625}
+  m_LocalPosition: {x: 16.2, y: -3.28, z: 0.025390625}
   m_LocalScale: {x: 4.6209397, y: 3.27806, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52,23 +53,23 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.008569688, y: 0.3120944}
+  m_Offset: {x: -0.028308988, y: 0.01479803}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 0.96, y: 0.48}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3637684, y: 0.084403515}
+  m_Size: {x: 0.6634073, y: 0.3280891}
   m_EdgeRadius: 0
---- !u!61 &61467170631482062
+--- !u!61 &61285670394940164
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,20 +81,45 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.027005509, y: -0.17266414}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 0.96, y: 0.48}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.520216, y: 0.044808984}
   m_EdgeRadius: 0
---- !u!114 &114229357801417566
+--- !u!61 &61467170631482062
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1583679173909696}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 3a119dd6361ef0a47a59b1bc9eea9bb8, type: 2}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.018145561, y: 0.15513827}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.96, y: 0.48}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4160943, y: 0.06291393}
+  m_EdgeRadius: 0
+--- !u!114 &114037989295607728
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,7 +133,7 @@ MonoBehaviour:
   PowerUp: 
   ammoOrPowerUp: 
   diveIdleSeconds: 1
-  diveUpForce: 100
+  diveUpForce: 150
   diveUpSeconds: 1
 --- !u!212 &212249340618931882
 SpriteRenderer:
@@ -141,10 +167,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -364270219
-  m_SortingLayer: 2
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: dfa69e1c44f21054aa11670a87ebf55b, type: 3}
+  m_SortingLayerID: -206726609
+  m_SortingLayer: -1
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 27d4c8006517c5d4bb0de5615ebc2252, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
