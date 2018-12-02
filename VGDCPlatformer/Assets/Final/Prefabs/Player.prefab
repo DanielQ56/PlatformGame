@@ -147,8 +147,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1917857815206038}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.17, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 4872574980987372}
   m_RootOrder: 3
@@ -160,8 +160,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1981973538962496}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.4024076, y: 3.6045322, z: -2.418236}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalPosition: {x: -6.33, y: -3.63, z: -2.418236}
+  m_LocalScale: {x: 5, y: 5, z: 0}
   m_Children:
   - {fileID: 4062646638269082}
   - {fileID: 4338507588249922}
@@ -298,7 +298,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 4338507588249922}
   m_HorizontalCheck: {fileID: 0}
   m_AirControl: 1
-  m_RigidBody2D: {fileID: 0}
+  m_RigidBody2D: {fileID: 50744147910004872}
   m_FacingRight: 1
   m_Damaged: 0
   m_Immune: 0
@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78e2c88e973d43eab45616e3259d455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1681703100928452, guid: 0c405613f6a9940e69d6863310c29b71,
+  projectilePrefab: {fileID: 1681703100928452, guid: 606e86bd7f59f0046ba86a2a85fc7bb8,
     type: 2}
   player: {fileID: 1981973538962496}
   launchSpeed: 3
@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
-  invincibilitySeconds: 2
+  invincibilitySeconds: 1
 --- !u!212 &212135282639176834
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -508,7 +508,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0

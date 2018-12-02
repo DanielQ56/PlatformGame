@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerPower : MonoBehaviour
 {
@@ -57,6 +58,7 @@ public class PlayerPower : MonoBehaviour
         }
         if (activated)
         {
+            alignCenter();
             if (!started)
             {
                 activatePower();
@@ -98,8 +100,16 @@ public class PlayerPower : MonoBehaviour
 
     void alignCenter()
     {
-        Vector3 pVect = new Vector3(playerSprite.bounds.center.x, playerSprite.bounds.center.y + (playerSprite.bounds.size.y / (7 / 4)));
-        powerSprite.transform.position = pVect;
+        Vector3 scale = powerSprite.transform.localScale;
+        if (playerSprite.transform.localScale.x > 0)
+        {
+            scale.x = 0.3f;
+        }
+        else
+        {
+            scale.x = -0.3f;
+        }
+        powerSprite.transform.localScale = scale;
     }
 
     public void newPower(Powerup p)
@@ -116,9 +126,8 @@ public class PlayerPower : MonoBehaviour
 
     private void setSprite()
     {
-        alignCenter();
         powerSprite.sprite = powerBeingUsed.getSprite();
-        Invoke("revertSprite", timer / 4);
+        Invoke("revertSprite", timer / 3);
     }
 
     private void revertSprite()
@@ -136,6 +145,28 @@ public class PlayerPower : MonoBehaviour
         return activated && started;
     }
 
+    // For duration bar
+    public float getTimer()
+    {
+        return timer;
+    }
 
+    // Needed to show current powerup while it hasn't been activated yet
+    public Sprite getCurrentPowerSprite()
+    {
+        return currentPower.getSprite();
+    }
+
+    // Returns if currentPower is NOT null; needed to display powerup while player hasn't it activated yet
+    public bool currentPowerPresent()
+    {
+        return currentPower != null;
+    }
+
+    // Same reason as currentPowerPresent
+    public bool powerBeingUsedPresent()
+    {
+        return powerBeingUsed != null;
+    }
 
 }
