@@ -13,6 +13,8 @@ public class PlayerManager : MonoBehaviour
     public float bounceForce = 20f;
     public float dangerousVelocity = 80f; // When in air and the downward velocity is greater than 80, player dies
                                           // 80 is about the height of the camera.
+    public float sideForce = 30f;
+    public float hitForce = 10f;
 
     public float downwardVelocity;  // Testing purpose
     public Transform SpawnPoint;
@@ -34,7 +36,14 @@ public class PlayerManager : MonoBehaviour
     //will occur when player interacts with Enemy object
     void OnTriggerEnter2D(Collider2D collide)
     {
-        if (collide.gameObject.tag == "hurtbox")
+        if(collide.name == "bossHurtBox")
+        {
+            Debug.Log("Hit the boss");
+            collide.GetComponentInParent<BossHealth>().hit();
+            m_rb2d.velocity = Vector3.zero;
+            m_rb2d.AddForce(new Vector3(0, bounceForce, 0), ForceMode2D.Impulse);
+        }
+        else if (collide.gameObject.tag == "hurtbox")
         {
             Debug.Log("collide with hurtbox");
 
@@ -51,6 +60,16 @@ public class PlayerManager : MonoBehaviour
             Debug.Log("collide with hitbox");
 
             m_HealthManager.damagePlayer();
+            if(GetComponent<CharacterController2D>().m_FacingRight)
+            {
+                m_rb2d.velocity = Vector3.zero;
+                m_rb2d.AddForce(new Vector3(-sideForce, hitForce, 0), ForceMode2D.Impulse);
+            }
+            else
+            {
+                m_rb2d.velocity = Vector3.zero;
+                m_rb2d.AddForce(new Vector3(sideForce, hitForce, 0), ForceMode2D.Impulse);
+            }
         }
 
         if (collide.gameObject.tag == "checkPoint")

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class meleeHitbox : MonoBehaviour {
+    public float waitTime = 5f;
+
 
     GameObject melee;
     BoxCollider2D body;
@@ -14,14 +16,6 @@ public class meleeHitbox : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(GetComponentInParent<BossMovement>().isFacingLeft())
-        {
-            body.offset = new Vector2(-0.5f, body.offset.y);
-        }
-        else
-        {
-            body.offset = new Vector2(0.5f, body.offset.y);
-        }
 	}
 
     void OnTriggerEnter2D(Collider2D col)
@@ -38,10 +32,13 @@ public class meleeHitbox : MonoBehaviour {
             else
             {
                 pos = new Vector2(transform.parent.position.x + GetComponentInParent<SpriteRenderer>().bounds.size.x / 2, transform.position.y);
-                angle = 90f;
+
+                angle = -90f;
             }
             melee = Instantiate(GetComponentInParent<BossAttack>().meleePrefab);
+            melee.transform.parent = transform;
             melee.transform.position = pos;
+            melee.transform.eulerAngles = new Vector3(0, 0, 90);
         }
     }
 
@@ -49,8 +46,14 @@ public class meleeHitbox : MonoBehaviour {
     {
         if(col.tag == "Player")
         {
-            Destroy(melee);
-            melee = null;
+            StartCoroutine("waitAttack");
         }
+    }
+
+    IEnumerator waitAttack()
+    {
+        yield return new WaitForSeconds(waitTime);
+        Destroy(melee);
+        melee = null;
     }
 }

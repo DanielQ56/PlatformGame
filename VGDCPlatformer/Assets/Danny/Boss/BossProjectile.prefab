@@ -23,9 +23,9 @@ GameObject:
   - component: {fileID: 50180387850028588}
   - component: {fileID: 114587275963739064}
   - component: {fileID: 61579183195637292}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BossProjectile
-  m_TagString: Untagged
+  m_TagString: hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -11,12 +11,10 @@ public class BossAttack : MonoBehaviour {
 
 
     bool waiting = false;
-    Rigidbody2D body;
     SpriteRenderer sprite;
     GameObject player;  
 	// Use this for initialization
 	void Start () {
-        body = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player");
 	}
@@ -39,7 +37,7 @@ public class BossAttack : MonoBehaviour {
             if (GetComponent<BossMovement>().isFacingLeft())
                 pos = new Vector2( transform.position.x - sprite.bounds.size.x / 2, transform.position.y);
             else
-                pos = new Vector2(transform.position.x - sprite.bounds.size.x / 2, transform.position.y);
+                pos = new Vector2(transform.position.x + sprite.bounds.size.x / 2, transform.position.y);
             Clone = Instantiate(projPrefab, pos, transform.rotation);
             Clone.GetComponent<Rigidbody2D>().velocity = new Vector2((player.transform.position.x - transform.position.x) * speedMulti, (player.transform.position.y-transform.position.y) * speedMulti);
         }
