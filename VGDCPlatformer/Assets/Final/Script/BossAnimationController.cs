@@ -5,12 +5,14 @@ using UnityEngine;
 public class BossAnimationController : MonoBehaviour {
 
 	private BossMovement bossMove;
-
+	private GameObject player;
+	
 	private Animator anim;
 	private bool animFacingLeft;
 
 	// Use this for initialization
 	void Start () {
+		player = GameObject.FindWithTag("Player");
 		anim = GetComponent<Animator>();
 		bossMove = GetComponent<BossMovement>();
 		animFacingLeft = bossMove.isFacingLeft();
@@ -18,7 +20,11 @@ public class BossAnimationController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		animFacingLeft = bossMove.isFacingLeft();
+		animFacingLeft = leftOfPlayer();
 		anim.SetBool("facingLeft", animFacingLeft);
+	}
+	
+	bool leftOfPlayer() {
+		return (transform.position.x - player.transform.position.x > 0); 
 	}
 }
