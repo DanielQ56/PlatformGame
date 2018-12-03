@@ -8,10 +8,13 @@ public class meleeHitbox : MonoBehaviour {
 
     GameObject melee;
     BoxCollider2D body;
+    BossAudio bA;
+    bool canAttack = true;
     // Use this for initialization
     void Start () {
         body = GetComponent<BoxCollider2D>();
         melee = null;
+        bA = GetComponentInParent<BossAudio>();
     }
 	
 	// Update is called once per frame
@@ -20,25 +23,25 @@ public class meleeHitbox : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.tag == "Player" && melee == null)
+        if(col.tag == "Player" && melee == null && canAttack)
         {
             Vector2 pos;
             float angle;
             if (GetComponentInParent<BossMovement>().isFacingLeft())
             {
-                pos = new Vector2(transform.parent.position.x - GetComponentInParent<SpriteRenderer>().bounds.size.x / 2, transform.position.y);
+                pos = new Vector2(transform.parent.position.x - (GetComponentInParent<SpriteRenderer>().bounds.size.x / 2) + 0.3f, transform.position.y-0.4f);
                 angle = 90f;
             }
             else
             {
-                pos = new Vector2(transform.parent.position.x + GetComponentInParent<SpriteRenderer>().bounds.size.x / 2, transform.position.y);
+                pos = new Vector2(transform.parent.position.x + (GetComponentInParent<SpriteRenderer>().bounds.size.x / 2) - 0.3f, transform.position.y-0.4f);
 
                 angle = -90f;
             }
             melee = Instantiate(GetComponentInParent<BossAttack>().meleePrefab);
             melee.transform.parent = transform;
             melee.transform.position = pos;
-            melee.transform.eulerAngles = new Vector3(0, 0, 90);
+            bA.kickSound();
         }
     }
 
@@ -55,5 +58,10 @@ public class meleeHitbox : MonoBehaviour {
         yield return new WaitForSeconds(waitTime);
         Destroy(melee);
         melee = null;
+    }
+    
+    public void die()
+    {
+        canAttack = false;
     }
 }

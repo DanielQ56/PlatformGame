@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class meleeAttack : MonoBehaviour {
-    public float waitTime = 1;
+    public float waitTime = 1f;
     // Use this for initialization
     GameObject player;
-    GameObject boss;
+    BossMovement boss;
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
-        boss = GameObject.FindGameObjectWithTag("Boss");
+        boss = transform.parent.GetComponent<BossMovement>();
 	}
 	
 	// Update is called once per frame
@@ -19,15 +19,13 @@ public class meleeAttack : MonoBehaviour {
 
     void updatePosition()
     {
-        if (boss.GetComponent<BossMovement>().isFacingLeft())
+        if (transform.GetComponentInParent<BossMovement>().isFacingLeft())
         {
-            transform.position = new Vector2(boss.transform.position.x - boss.GetComponent<SpriteRenderer>().bounds.size.x / 2, boss.transform.position.y);
-            transform.eulerAngles = new Vector3(0, 0, 90);
+            GetComponent<SpriteRenderer>().flipX= false;
         }
         else
         {
-            transform.position = new Vector2(boss.transform.position.x + boss.GetComponent<SpriteRenderer>().bounds.size.x / 2, boss.transform.position.y);
-            transform.eulerAngles = new Vector3(0, 0, -90);
+            GetComponent<SpriteRenderer>().flipX = true;
         }
     }
 }

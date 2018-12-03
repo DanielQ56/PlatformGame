@@ -13,12 +13,16 @@ public class PlayerHealth : MonoBehaviour {
 	private bool invincibleFrameOn;
 	private Scene currentLevel;
 
+    private AudioSource hurtSound;
+
 	// Use this for initialization
 	void Start () {
 		currentHealth = maxHealth;
 		currentLevel = SceneManager.GetActiveScene();
 		Debug.Log("Loaded " + currentLevel.name);
-	}
+
+        hurtSound = GetComponentsInChildren<AudioSource>()[0];
+    }
 
 	void FixedUpdate() {
 		if (currentHealth == 0) {
@@ -51,7 +55,8 @@ public class PlayerHealth : MonoBehaviour {
 
 	public void decrementHealth() {
 		if (currentHealth > 0) {
-		    currentHealth--;
+            hurtSound.Play();
+            currentHealth--;
 		}
 	}
 

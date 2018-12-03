@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossJump : MonoBehaviour {
+public class BossJump : MonoBehaviour
+{
 
     public string[] jumpProb;
     public float fallMultiplier;
@@ -13,10 +14,12 @@ public class BossJump : MonoBehaviour {
     int chosenNum;
     bool coroutineInProgress = false;
     bool jumping = false;
-
+    BossAudio bA;
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         myBody = GetComponent<Rigidbody2D>();
+        bA = GetComponent<BossAudio>();
     }
 
     // Update is called once per frame
@@ -33,7 +36,7 @@ public class BossJump : MonoBehaviour {
 
     void randNum()
     {
-        if(!jumping)
+        if (!jumping)
         {
             chosenNum = (int)(Random.value * jumpProb.Length);
         }
@@ -46,6 +49,7 @@ public class BossJump : MonoBehaviour {
         {
             jumping = true;
             myBody.velocity += Vector2.up * jumpVelocity;
+            bA.jumpSound();
         }
     }
 
@@ -72,5 +76,10 @@ public class BossJump : MonoBehaviour {
         yield return new WaitForSeconds(sec);
         jumping = false;
         coroutineInProgress = false;
+    }
+
+    public void die()
+    {
+        jumpVelocity = 0;
     }
 }
