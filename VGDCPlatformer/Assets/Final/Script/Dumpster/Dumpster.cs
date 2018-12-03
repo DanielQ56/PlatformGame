@@ -23,12 +23,14 @@ public class Dumpster : MonoBehaviour
     private BoxCollider2D dumpsterCollider;
 
     private AudioSource OnTouchSound;
+    private float defaultVolume;
 
     void Start()
     {
         dumpsterCollider = GetComponent<BoxCollider2D>(); // For DoDiveAnimation()
         OnTouchSound = GetComponentInChildren<AudioSource>();
-        
+        defaultVolume = OnTouchSound.volume;
+
     }
 
     private void FixedUpdate()
@@ -106,6 +108,7 @@ public class Dumpster : MonoBehaviour
         dumpsterCollider.enabled = false;
 
         playerObject.GetComponent<SpriteRenderer>().sortingLayerName = "BackGround";
+        OnTouchSound.volume = 0;
 
         yield return new WaitForSeconds(diveIdleSeconds);
 
@@ -117,5 +120,9 @@ public class Dumpster : MonoBehaviour
 
         dumpsterCollider.enabled = true;
         playerRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        yield return new WaitForSeconds(diveUpSeconds / 1.5f);
+        OnTouchSound.volume = defaultVolume;
+
     }
 }
