@@ -43,6 +43,10 @@ public class BossAttack : MonoBehaviour {
                 pos = new Vector2(transform.position.x + sprite.bounds.size.x / 2, transform.position.y);
             Clone = Instantiate(projPrefab, pos, transform.rotation);
             Clone.GetComponent<Rigidbody2D>().velocity = new Vector2((player.transform.position.x - transform.position.x) * speedMulti, (player.transform.position.y-transform.position.y) * speedMulti);
+            if(GetComponent<BossMovement>().isFacingLeft())
+            {
+                Clone.GetComponent<SpriteRenderer>().flipX = true;
+            }
             bA.throwNetSound();
         }
     }

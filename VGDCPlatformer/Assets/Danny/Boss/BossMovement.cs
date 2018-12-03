@@ -30,7 +30,7 @@ public class BossMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-       //flipSpriteDirection();
+       flipSpriteDirection();
 	}
 
     void FixedUpdate()
@@ -60,12 +60,10 @@ public class BossMovement : MonoBehaviour {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (facingLeft && player.transform.position.x > myTrans.position.x)
         {
-            transform.rotation = new Quaternion(0, 180f, 0, 0);
             facingLeft = false;
         }
         else if(!facingLeft && player.transform.position.x < myTrans.position.x)
         {
-            transform.rotation = new Quaternion(0, 0, 0, 0);
             facingLeft = true;
         }
 
@@ -124,7 +122,7 @@ public class BossMovement : MonoBehaviour {
     public void die()
     {
         myBody.velocity = Vector2.zero;
-        myBody.position = startCheckPoint.transform.position;
+        myBody.position = new Vector3(startCheckPoint.transform.position.x, startCheckPoint.transform.position.y + mySprite.bounds.size.y / 2);
         canMove = false;
     }
 }

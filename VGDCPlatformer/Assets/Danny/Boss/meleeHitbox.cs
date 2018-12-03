@@ -29,19 +29,18 @@ public class meleeHitbox : MonoBehaviour {
             float angle;
             if (GetComponentInParent<BossMovement>().isFacingLeft())
             {
-                pos = new Vector2(transform.parent.position.x - GetComponentInParent<SpriteRenderer>().bounds.size.x / 2, transform.position.y);
+                pos = new Vector2(transform.parent.position.x - (GetComponentInParent<SpriteRenderer>().bounds.size.x / 2) + 0.3f, transform.position.y-0.4f);
                 angle = 90f;
             }
             else
             {
-                pos = new Vector2(transform.parent.position.x + GetComponentInParent<SpriteRenderer>().bounds.size.x / 2, transform.position.y);
+                pos = new Vector2(transform.parent.position.x + (GetComponentInParent<SpriteRenderer>().bounds.size.x / 2) - 0.3f, transform.position.y-0.4f);
 
                 angle = -90f;
             }
             melee = Instantiate(GetComponentInParent<BossAttack>().meleePrefab);
             melee.transform.parent = transform;
             melee.transform.position = pos;
-            melee.transform.eulerAngles = new Vector3(0, 0, angle);
             bA.kickSound();
         }
     }
