@@ -11,10 +11,13 @@ public class PlayerHealth : MonoBehaviour {
 
 	private int currentHealth;
 	private bool invincibleFrameOn;
+	private Scene currentLevel;
 
 	// Use this for initialization
 	void Start () {
 		currentHealth = maxHealth;
+		currentLevel = SceneManager.GetActiveScene();
+		Debug.Log("Loaded " + currentLevel.name);
 	}
 
 	void FixedUpdate() {
@@ -54,7 +57,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	private void onDeath() {
 		Debug.Log("You died!");
-        SceneManager.LoadScene("TransitionScene");
+        SceneManager.LoadScene(currentLevel.name);
 
     }
 
@@ -63,4 +66,8 @@ public class PlayerHealth : MonoBehaviour {
         int newHealth = currentHealth + extraHealth;
         currentHealth = newHealth >= maxHealth + 1 ? maxHealth + 1: newHealth;
     }
+
+	public void killPlayer() {
+		onDeath();
+	}
 }

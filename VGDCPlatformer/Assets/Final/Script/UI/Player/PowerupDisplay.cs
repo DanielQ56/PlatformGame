@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class PowerupDisplay : MonoBehaviour
@@ -17,15 +15,21 @@ public class PowerupDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (powerupComponent.isActive())
+        if (panelPowerupImage.sprite == null)
         {
-            panelPowerupImage.color = Color.white;
-            panelPowerupImage.sprite = powerupComponent.getCurrentSprite();
+            if (powerupComponent.currentPowerPresent())
+            {
+                panelPowerupImage.color = new Color(255, 255, 255, 255);
+                panelPowerupImage.sprite = powerupComponent.getCurrentPowerSprite();
+            }
         }
         else
         {
-            panelPowerupImage.color = new Color(0, 0, 0, 0);
-            panelPowerupImage.sprite = null;
+            if (!powerupComponent.currentPowerPresent() && !powerupComponent.powerBeingUsedPresent())
+            {
+                panelPowerupImage.color = new Color(0, 0, 0, 0);
+                panelPowerupImage.sprite = null;
+            }
         }
     }
 }

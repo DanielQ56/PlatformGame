@@ -100,12 +100,16 @@ public class Dumpster : MonoBehaviour
         playerRigidBody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         dumpsterCollider.enabled = false;
 
+        playerObject.GetComponent<SpriteRenderer>().sortingLayerName = "BackGround";
+
         yield return new WaitForSeconds(diveIdleSeconds);
 
         playerRigidBody.AddForce(new Vector3(0f, diveUpForce, 0f), ForceMode2D.Impulse);
         givePlayerEffect();
 
         yield return new WaitForSeconds(diveUpSeconds / 2);
+        playerObject.GetComponent<SpriteRenderer>().sortingLayerName = "Default";
+
         dumpsterCollider.enabled = true;
         playerRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
     }

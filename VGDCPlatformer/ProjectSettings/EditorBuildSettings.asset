@@ -15,9 +15,15 @@ EditorBuildSettings:
     path: Assets/Trent/_scene/GameOver.unity
     guid: 38034fbcaf5bcf2428091ec5f5866795
   - enabled: 1
-    path: Assets/Annie/MenuTutorial.unity
+    path: Assets/Annie/IntroTutorial/MenuTutorial.unity
     guid: 1041ca1e04e6c3448acafa7977b0e4a7
   - enabled: 1
     path: Assets/Annie/AttackScene_Annie.unity
     guid: 761a5613188440d42b4639662ddfa4ea
+  - enabled: 1
+    path: Assets/Final/Scenes/Stage1.unity
+    guid: a98db77bacff40c428404e2740e1d1b8
+  - enabled: 1
+    path: Assets/Matthew/BossStage1.unity
+    guid: 90b85d0c78fba434caedbd88e7d747c8
   m_configObjects: {}
