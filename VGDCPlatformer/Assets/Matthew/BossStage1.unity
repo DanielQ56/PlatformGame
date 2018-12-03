@@ -199,6 +199,74 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4872164702221672, guid: 4138bc7060b65484c93cd26e4204ff16,
     type: 2}
   m_PrefabInternal: {fileID: 1068565198}
+--- !u!1001 &59219347
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1625288788}
+    m_Modifications:
+    - target: {fileID: 4177284347342010, guid: 0b4e1b27a53e844568339b7769ba327d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -7.8406043
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177284347342010, guid: 0b4e1b27a53e844568339b7769ba327d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.9629555
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177284347342010, guid: 0b4e1b27a53e844568339b7769ba327d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -12.264996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177284347342010, guid: 0b4e1b27a53e844568339b7769ba327d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177284347342010, guid: 0b4e1b27a53e844568339b7769ba327d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177284347342010, guid: 0b4e1b27a53e844568339b7769ba327d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177284347342010, guid: 0b4e1b27a53e844568339b7769ba327d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177284347342010, guid: 0b4e1b27a53e844568339b7769ba327d, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320947987627632, guid: 0b4e1b27a53e844568339b7769ba327d, type: 2}
+      propertyPath: m_Name
+      value: Main Camera (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114397285747469814, guid: 0b4e1b27a53e844568339b7769ba327d,
+        type: 2}
+      propertyPath: m_BoundingShape2D
+      value: 
+      objectReference: {fileID: 1683583712}
+    - target: {fileID: 114215458108733542, guid: 0b4e1b27a53e844568339b7769ba327d,
+        type: 2}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 1343366844}
+    - target: {fileID: 4618994938108468, guid: 0b4e1b27a53e844568339b7769ba327d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.0051651
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618994938108468, guid: 0b4e1b27a53e844568339b7769ba327d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.7902956
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618994938108468, guid: 0b4e1b27a53e844568339b7769ba327d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0b4e1b27a53e844568339b7769ba327d, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!4 &63108150 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4751698882664198, guid: dc682c3c3536165499d01f09ecb2466b,
@@ -313,6 +381,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -515,6 +587,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -526,7 +602,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 240404183}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Tree Trunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -661,6 +737,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -706,6 +786,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -758,6 +842,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -803,6 +891,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -850,6 +942,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -891,6 +987,10 @@ Prefab:
     - target: {fileID: 4872164702221672, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -937,6 +1037,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -1029,6 +1133,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -1130,6 +1238,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -1176,7 +1288,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 329574437}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Tree Trunk (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1256,6 +1368,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -1301,6 +1417,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -1402,6 +1522,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -1452,6 +1576,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -1554,6 +1682,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -1711,6 +1843,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -1756,6 +1892,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -1869,6 +2009,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -1919,6 +2063,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -1971,6 +2119,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -2017,6 +2169,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -2030,66 +2186,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4872164702221672, guid: 4138bc7060b65484c93cd26e4204ff16,
     type: 2}
   m_PrefabInternal: {fileID: 1076366898}
---- !u!1 &630686266
-GameObject:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 630686267}
-  - component: {fileID: 630686268}
-  - component: {fileID: 630686269}
-  m_Layer: 0
-  m_Name: cm
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &630686267
-Transform:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 630686266}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.1499999, y: 1.1999998, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 711415711}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &630686268
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 630686266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &630686269
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 630686266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 0, z: -10}
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
-  m_PitchDamping: 0
-  m_YawDamping: 0
-  m_RollDamping: 0
 --- !u!4 &636726704 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4751698882664198, guid: dc682c3c3536165499d01f09ecb2466b,
@@ -2154,7 +2250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 661983812}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Tree Trunk (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2234,6 +2330,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -2290,100 +2390,13 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &711415708
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 711415711}
-  - component: {fileID: 711415710}
-  - component: {fileID: 711415709}
-  - component: {fileID: 711415712}
-  m_Layer: 0
-  m_Name: PlayerCamera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &711415709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 711415708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ExcludedPropertiesInInspector:
-  - m_Script
-  m_LockStageInInspector: 
-  m_StreamingVersion: 20170927
-  m_Priority: 10
-  m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 1343366844}
-  m_Lens:
-    FieldOfView: 40
-    OrthographicSize: 7
-    NearClipPlane: 0.1
-    FarClipPlane: 5000
-    Dutch: 0
-    LensShift: {x: 0, y: 0}
-  m_Transitions:
-    m_BlendHint: 0
-    m_InheritPosition: 0
-    m_OnCameraLive:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: Cinemachine.CinemachineBrain+VcamEvent, Cinemachine, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-  m_LegacyBlendHint: 0
-  m_ComponentOwner: {fileID: 630686267}
---- !u!81 &711415710
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 711415708}
-  m_Enabled: 1
---- !u!4 &711415711
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 711415708}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.6087, y: -1.4123638, z: -12.264996}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 630686267}
-  m_Father: {fileID: 1625288788}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &711415712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 711415708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2fba25a5cd15594e8f050a11e386c80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ConfineMode: 0
-  m_BoundingVolume: {fileID: 0}
-  m_BoundingShape2D: {fileID: 1683583712}
-  m_ConfineScreenEdges: 1
-  m_Damping: 0
 --- !u!1001 &737546668
 Prefab:
   m_ObjectHideFlags: 0
@@ -2422,6 +2435,10 @@ Prefab:
     - target: {fileID: 4872164702221672, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -2469,6 +2486,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -2514,6 +2535,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -2565,6 +2590,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -2791,6 +2820,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -2841,6 +2874,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -2940,6 +2977,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -2991,6 +3032,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -3037,6 +3082,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -3048,7 +3097,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 989540108}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Tree Trunk (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3128,6 +3177,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -3189,6 +3242,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -3235,9 +3292,88 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1033757568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1033757570}
+  - component: {fileID: 1033757569}
+  m_Layer: 0
+  m_Name: sky
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1033757569
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1033757568}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -206726609
+  m_SortingLayer: -1
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: cf37ba0bd1f2a4bc8953a7d232a85a9a, type: 3}
+  m_Color: {r: 0.15686189, g: 0.23584908, b: 0.21566927, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 15, y: 10}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1033757570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1033757568}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.622, y: 5.277, z: 0}
+  m_LocalScale: {x: 3.0036788, y: 2.294741, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1034277642 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4872164702221672, guid: 4138bc7060b65484c93cd26e4204ff16,
@@ -3338,6 +3474,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -3389,6 +3529,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -3430,6 +3574,10 @@ Prefab:
     - target: {fileID: 4872164702221672, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -3477,6 +3625,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -3522,6 +3674,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -3569,6 +3725,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -3614,6 +3774,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -3666,6 +3830,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -3713,6 +3881,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -3758,6 +3930,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -3852,6 +4028,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -3897,6 +4077,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -4045,6 +4229,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -4142,6 +4330,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -4193,6 +4385,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -4209,7 +4405,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1325537189}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4289,6 +4485,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -4334,6 +4534,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -4381,6 +4585,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -4398,7 +4606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1402553082}
   - component: {fileID: 1402553083}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4609,6 +4817,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -4712,6 +4924,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -4762,6 +4978,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -4814,6 +5034,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -4864,6 +5088,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -4920,6 +5148,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -5028,123 +5260,13 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1618127294
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1618127297}
-  - component: {fileID: 1618127296}
-  - component: {fileID: 1618127295}
-  - component: {fileID: 1618127298}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &1618127295
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1618127294}
-  m_Enabled: 1
---- !u!20 &1618127296
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1618127294}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.1
-  far clip plane: 5000
-  field of view: 40
-  orthographic: 1
-  orthographic size: 7
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &1618127297
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1618127294}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.131191, y: 4.3464375, z: -12.264996}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1625288788}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1618127298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1618127294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowDebugText: 0
-  m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
-    m_CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
-  m_CameraCutEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Cinemachine.CinemachineBrain+BrainEvent, Cinemachine, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_CameraActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Cinemachine.CinemachineBrain+VcamEvent, Cinemachine, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1625288787
 GameObject:
   m_ObjectHideFlags: 0
@@ -5170,8 +5292,7 @@ Transform:
   m_LocalPosition: {x: 0.62870014, y: -3.9376361, z: -0.15324053}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1618127297}
-  - {fileID: 711415711}
+  - {fileID: 1828684818}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5256,7 +5377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1687174555}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Tree Trunk (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5398,6 +5519,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -5455,7 +5580,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1770020841}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Tree Trunk (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5530,6 +5655,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -5546,7 +5675,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1796948559}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Tree Trunk (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5621,6 +5750,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -5666,6 +5799,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -5713,6 +5850,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -5758,6 +5899,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -7504,6 +7649,11 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+--- !u!4 &1828684818 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4177284347342010, guid: 0b4e1b27a53e844568339b7769ba327d,
+    type: 2}
+  m_PrefabInternal: {fileID: 59219347}
 --- !u!4 &1835678971 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4872164702221672, guid: 4138bc7060b65484c93cd26e4204ff16,
@@ -7551,6 +7701,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -7608,6 +7762,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -7658,6 +7816,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -7711,6 +7873,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -7756,6 +7922,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -7803,6 +7973,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -7848,6 +8022,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -7895,6 +8073,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -7940,6 +8122,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -8049,6 +8235,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -8094,6 +8284,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -8150,6 +8344,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -8251,6 +8449,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -8296,6 +8498,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
@@ -8343,6 +8549,10 @@ Prefab:
       propertyPath: m_Name
       value: Trunk Sprite (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
   m_IsPrefabAsset: 0
@@ -8388,6 +8598,10 @@ Prefab:
     - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
       propertyPath: m_Name
       value: Trunk Sprite (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855677958644172, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138bc7060b65484c93cd26e4204ff16, type: 2}
