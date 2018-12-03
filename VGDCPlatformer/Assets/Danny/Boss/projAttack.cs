@@ -15,7 +15,7 @@ public class projAttack : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collid)
     {
-        if (collid.tag == "Player" || collid.tag == "ground") ;
+        if (collid.tag == "Player" || collid.tag == "ground")
             Destroy(gameObject);
     }
 

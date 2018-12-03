@@ -11,24 +11,30 @@ public class BossWarp : MonoBehaviour {
     bool waiting = false;
     GameObject[] checkpoints;
     GameObject player;
-
+    BossAudio bA;
+    bool canWarp = true;
 	// Use this for initialization
 	void Start () {
        checkpoints = GameObject.FindGameObjectsWithTag("checkPoint");
         player = GameObject.FindGameObjectWithTag("Player");
+        bA = GetComponent<BossAudio>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (!waiting)
-        {
+        { 
             StartCoroutine("delayWarp");
         }
 	}
 
     void warp()
     {
-        GetComponent<BossMovement>().warped(chooseCheckpoint(checkpoints));
+        if (canWarp)
+        {
+            GetComponent<BossMovement>().warped(chooseCheckpoint(checkpoints));
+            bA.warpSound();
+        }
     }
 
     GameObject chooseCheckpoint(GameObject[] checks)
@@ -79,4 +85,11 @@ public class BossWarp : MonoBehaviour {
         waiting = false;
         warp();
     }
+
+    public void die()
+    {
+        canWarp = false;
+    }
 }
+
+

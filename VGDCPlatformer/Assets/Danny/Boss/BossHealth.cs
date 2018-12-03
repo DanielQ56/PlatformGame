@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class BossHealth : MonoBehaviour {
     public int maxHealth;
-    public AudioClip[] audioClips;
-
+    public float deathTimer = 2f;
+    public float invTime = 0.5f;
+    BossAudio bA;
     int currHealth;
-    AudioSource aud;
+    bool invincible = false;
+    bool dead = false;
 	// Use this for initialization
 	void Start () {
-        aud = GetComponent<AudioSource>();
         currHealth = maxHealth;
+        bA = GetComponent<BossAudio>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (currHealth == 0)
-            Destroy(gameObject);
-	}
+        {
+            StartCoroutine("die");
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D collid)
     {
@@ -30,12 +34,38 @@ public class BossHealth : MonoBehaviour {
 
     void gotHit()
     {
-        currHealth -= 1;
-        aud.Play();
+        if (!invincible && !dead)
+        {
+            currHealth -= 1;
+            bA.hurtNoise(currHealth);
+            StartCoroutine("invincibility");
+            Debug.Log(currHealth);
+        }
     }
 
     public void hit()
     {
         gotHit();
     }
+    
+
+    IEnumerator die()
+    {
+        dead = true;
+        GetComponent<BossMovement>().die();
+        GetComponent<BossJump>().die();
+        GetComponentInChildren<meleeHitbox>().die();
+        GetComponent<BossWarp>().die();
+        GetComponent<BossAttack>().die();
+        yield return new WaitForSeconds(deathTimer);
+        Destroy(gameObject);
+    }
+
+    IEnumerator invincibility()
+    {
+        invincible = true;
+        yield return new WaitForSeconds(invTime);
+        invincible = false;
+    }
+
 }

@@ -12,9 +12,12 @@ public class BossAttack : MonoBehaviour {
 
     bool waiting = false;
     SpriteRenderer sprite;
-    GameObject player;  
+    GameObject player;
+    BossAudio bA;
+    bool canAttack = true;
 	// Use this for initialization
 	void Start () {
+        bA = GetComponent<BossAudio>();
         sprite = GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player");
 	}
@@ -30,7 +33,7 @@ public class BossAttack : MonoBehaviour {
 
     void rangedAttack()
     {
-        if(GameObject.Find("BossProjectile") == null)
+        if(GameObject.Find("BossProjectile") == null && canAttack)
         {
             GameObject Clone;
             Vector2 pos;
@@ -40,6 +43,7 @@ public class BossAttack : MonoBehaviour {
                 pos = new Vector2(transform.position.x + sprite.bounds.size.x / 2, transform.position.y);
             Clone = Instantiate(projPrefab, pos, transform.rotation);
             Clone.GetComponent<Rigidbody2D>().velocity = new Vector2((player.transform.position.x - transform.position.x) * speedMulti, (player.transform.position.y-transform.position.y) * speedMulti);
+            bA.throwNetSound();
         }
     }
 
@@ -56,5 +60,9 @@ public class BossAttack : MonoBehaviour {
         int num = (int)(Random.value * attackProbs.Length);
         if(attackProbs[num] == "ranged")
             rangedAttack();
+    }
+    public void die()
+    {
+        canAttack = false;
     }
 }
