@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 4566395897328040}
   - component: {fileID: 61878420325665772}
   - component: {fileID: 61937079646170264}
-  - component: {fileID: 114587741097711886}
+  - component: {fileID: 114683244375976628}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -116,7 +116,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1280453336430804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.38, y: -2.71, z: 0}
+  m_LocalPosition: {x: -4.5, y: 0.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4113546208060184}
@@ -129,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1732267376917024}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.44, y: 0.89, z: -0.16011667}
+  m_LocalPosition: {x: 14.44, y: -1.05, z: -0.16011667}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4078881172213484}
@@ -326,9 +326,9 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1308393923904074}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d7fedc1c947375049a6f8529b26af724, type: 2}
+  m_Controller: {fileID: 9100000, guid: e224d507aa9f68f4ead62a8b6193421e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -337,7 +337,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114587741097711886
+--- !u!114 &114683244375976628
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -345,7 +345,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1385880670646184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6998c81ce20414ed596f1faa5b8a4cab, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e2136d2983f74e0ca9226074e35fe20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1732267376917024}
