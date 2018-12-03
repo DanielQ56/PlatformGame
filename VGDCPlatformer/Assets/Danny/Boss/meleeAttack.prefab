@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4145330428163568}
   - component: {fileID: 212427792304005166}
   - component: {fileID: 61980140568744486}
-  - component: {fileID: 114144894031309784}
   m_Layer: 0
   m_Name: meleeAttack
   m_TagString: Untagged
@@ -67,18 +66,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.64}
   m_EdgeRadius: 0
---- !u!114 &114144894031309784
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1889897026148154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daed0537f6873f94f8ec59de69104d0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waitTime: 1
 --- !u!212 &212427792304005166
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -6,6 +6,7 @@ public class BossMovement : MonoBehaviour {
     public LayerMask myMask;
     public float m_speed;
     public float distanceToTravel;
+    public GameObject startCheckPoint;
 
     float distanceTraveled;
     Vector2 lastPos;
@@ -13,20 +14,20 @@ public class BossMovement : MonoBehaviour {
     Transform myTrans;
     SpriteRenderer mySprite;
     bool facingLeft = true;
-
     // Use this for initialization
     void Start () {
         distanceTraveled = 0;
         mySprite = GetComponent<SpriteRenderer>();
         myBody = GetComponent<Rigidbody2D>();
         myTrans = transform;
+        transform.position = new Vector2(startCheckPoint.transform.position.x, startCheckPoint.transform.position.y + mySprite.bounds.size.y / 2);
         lastPos = transform.position;
         myBody.velocity = new Vector2(-myTrans.right.x * m_speed, myBody.velocity.y);
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        flipSpriteDirection();
+       flipSpriteDirection();
 	}
 
     void FixedUpdate()
@@ -51,17 +52,25 @@ public class BossMovement : MonoBehaviour {
     void flipSpriteDirection()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player.transform.position.x > myTrans.position.x)
+        if (facingLeft && player.transform.position.x > myTrans.position.x)
         {
-            mySprite.flipX = true;
+            transform.rotation = new Quaternion(0, 180f, 0, 0);
             facingLeft = false;
         }
-        else
+        else if(!facingLeft && player.transform.position.x < myTrans.position.x)
         {
-            mySprite.flipX = false;
+            transform.rotation = new Quaternion(0, 0, 0, 0);
             facingLeft = true;
         }
-        
+
+    }
+
+    void OnCollisionEnter2D(Collision2D c)
+    {
+        if(c.gameObject.tag != "Boss" && c.gameObject.name != "BossProjectile")
+        {
+            changeMoveDirection();
+        }
     }
 
     bool isInBounds()
@@ -94,7 +103,7 @@ public class BossMovement : MonoBehaviour {
         lastPos = myTrans.position;
         distanceTraveled = 0;
     }
-
+    
     public bool isFacingLeft()
     {
         return facingLeft;
