@@ -14,9 +14,12 @@ public class PlayerPower : MonoBehaviour
     private float timer = 10f;
     public float defaultTimer;
 
+    private AudioSource powerUpActivation;
+
     // Use this for initialization
     void Start()
     {
+        powerUpActivation = GetComponentsInChildren<AudioSource>()[1];
         powerSprite = GameObject.FindGameObjectWithTag("powerup").GetComponent<SpriteRenderer>();
         playerSprite = GetComponent<SpriteRenderer>();
     }
@@ -80,6 +83,7 @@ public class PlayerPower : MonoBehaviour
     {
         setSprite();
         powerBeingUsed.change(gameObject);
+        powerUpActivation.Play();
         started = true;
     }
 

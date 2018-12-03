@@ -22,9 +22,13 @@ public class Dumpster : MonoBehaviour
     private bool dumpsterUsed = false;
     private BoxCollider2D dumpsterCollider;
 
+    private AudioSource OnTouchSound;
+
     void Start()
     {
         dumpsterCollider = GetComponent<BoxCollider2D>(); // For DoDiveAnimation()
+        OnTouchSound = GetComponentInChildren<AudioSource>();
+        
     }
 
     private void FixedUpdate()
@@ -43,6 +47,7 @@ public class Dumpster : MonoBehaviour
         //}
        
         if (collision.gameObject.tag == "Player") {
+            OnTouchSound.Play();
             playerOnDumpster = true;
 
             // Lazy Initialization
