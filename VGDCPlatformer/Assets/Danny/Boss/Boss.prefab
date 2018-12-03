@@ -62,6 +62,8 @@ GameObject:
   - component: {fileID: 114148627667581676}
   - component: {fileID: 114467397873000548}
   - component: {fileID: 114726719651048456}
+  - component: {fileID: 95522163485091156}
+  - component: {fileID: 114250627605110984}
   m_Layer: 10
   m_Name: Boss
   m_TagString: Boss
@@ -76,7 +78,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1272382000232432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.82, y: -9.97, z: 0}
+  m_LocalPosition: {x: -5.069323, y: 0.022533417, z: 0}
   m_LocalScale: {x: 2.7543194, y: 3.2841015, z: 1}
   m_Children:
   - {fileID: 4541555418195982}
@@ -146,7 +148,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.89, y: 0.94}
+    oldSize: {x: 0.29, y: 0.31}
     newSize: {x: 0.89, y: 0.94}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -300,6 +302,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &95522163485091156
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1272382000232432}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 80d50faca3f3c094ba90eacea0c8af06, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114148627667581676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -327,6 +347,17 @@ MonoBehaviour:
   projPrefab: {fileID: 1111046777465900, guid: dac40f0e90206014787e0ceea2c81e82, type: 2}
   meleePrefab: {fileID: 1889897026148154, guid: ba8fbf4e061da2041b480b2ba71290fe,
     type: 2}
+--- !u!114 &114250627605110984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1272382000232432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbfdeb07fcf56c943b066f4690bf72c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114399351621346572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -466,7 +497,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0ce043f74340248fd842a1ffa113a13b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7fa5c505d68d5194889fa822556aec91, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
