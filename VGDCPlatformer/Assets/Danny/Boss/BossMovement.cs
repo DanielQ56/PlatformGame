@@ -30,7 +30,7 @@ public class BossMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-       flipSpriteDirection();
+       //flipSpriteDirection();
 	}
 
     void FixedUpdate()
