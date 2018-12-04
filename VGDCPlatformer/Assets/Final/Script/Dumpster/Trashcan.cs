@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dumpster : MonoBehaviour
+public class Trashcan : MonoBehaviour
 {
     [Header("Powerup Settings")]
     public string PowerUp;
@@ -25,36 +25,14 @@ public class Dumpster : MonoBehaviour
     private AudioSource OnTouchSound;
     private float defaultVolume;
 
-    public bool infinitePowerUps = false;
-    public float resetPowerupEveryNthSecond = 20f;
-    private float resetTimer = 0;
-
     void Start()
     {
         dumpsterCollider = GetComponent<BoxCollider2D>(); // For DoDiveAnimation()
         OnTouchSound = GetComponentInChildren<AudioSource>();
         defaultVolume = OnTouchSound.volume;
-
-        if (infinitePowerUps)
-        {
-            resetTimer = 0f;
-        }
-
     }
 
-    private void Update()
-    {
-        if (infinitePowerUps)
-        {
-            resetTimer += Time.deltaTime;
-            if (resetTimer > resetPowerupEveryNthSecond)
-            {
-                Debug.Log("reset power up");
-                resetTimer = 0f;
-                dumpsterUsed = false;
-            }
-        }
-    }
+
 
     private void FixedUpdate()
     {
@@ -70,13 +48,15 @@ public class Dumpster : MonoBehaviour
         //{
         //    playerOnDumpster = true;
         //}
-       
-        if (collision.gameObject.tag == "Player") {
+
+        if (collision.gameObject.tag == "Player")
+        {
             OnTouchSound.Play();
             playerOnDumpster = true;
 
             // Lazy Initialization
-            if (playerObject == null) {
+            if (playerObject == null)
+            {
                 playerObject = collision.gameObject;
                 playerPower = playerObject.GetComponent<PlayerPower>();
                 playerRigidBody = playerObject.GetComponent<Rigidbody2D>();
@@ -107,22 +87,7 @@ public class Dumpster : MonoBehaviour
 
     private void givePlayerEffect()
     {
-        if (ammoOrPowerUp == "powerup")
-        {
-            Debug.Log("Giving player a powerup");
-            givePowerUp();
-        }
-        else if (ammoOrPowerUp == "ammo")
-        {
-            Debug.Log("Giving player ammo");
-            playerObject.GetComponent<PlayerAmmo>().giveDumpsterAmmo();
-        }
-    }
-
-    private void givePowerUp()
-    {
-        playerPower.newPower(PowerupManager.GetManager().RandPower());
-
+        playerObject.GetComponent<PlayerAmmo>().giveDumpsterAmmo();
     }
 
     private IEnumerator DoDiveAnimation() // Full diving animation.
@@ -144,8 +109,13 @@ public class Dumpster : MonoBehaviour
         dumpsterCollider.enabled = true;
         playerRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
 
+        // change the opacity of trashcan to 0.5 (meaning used)
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        Color c = sr.color;
+        Debug.Log(c.r + " " + c.g + " " + c.b);
+        sr.color = new Color(0.3137255f, 0.3137255f, 0.3137255f);
+
         yield return new WaitForSeconds(diveUpSeconds / 1.5f);
         OnTouchSound.volume = defaultVolume;
-
     }
 }

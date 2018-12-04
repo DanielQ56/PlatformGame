@@ -73,7 +73,11 @@ public class PlayerPower : MonoBehaviour
             else if (powerBeingUsed.getName() == "Seeking Bullet")
             {
                 //if (GameObject.FindGameObjectWithTag("SeekingBullet").GetComponent<SeekingBullet>().hasFired())
+                if (GetComponentInChildren<ProjectileFire>().HasFiredTrackingBullet())
+                {
                     reset();
+
+                }
             }
             decrementTimer();
         }
@@ -118,7 +122,7 @@ public class PlayerPower : MonoBehaviour
 
     public void newPower(Powerup p)
     {
-        if (currentPower == null)
+        if (currentPower == null && !activated)
             currentPower = p;
 
     }
