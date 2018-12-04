@@ -6,14 +6,16 @@ public class BossHealth : MonoBehaviour {
     public int maxHealth;
     public float deathTimer = 2f;
     public float invTime = 0.5f;
+    public BossDuplicate bD;
     BossAudio bA;
-    int currHealth;
+    public int currHealth;
     bool invincible = false;
     bool dead = false;
 	// Use this for initialization
 	void Start () {
         currHealth = maxHealth;
         bA = GetComponent<BossAudio>();
+        bD = gameObject.GetComponent<BossDuplicate>();
 	}
 	
 	// Update is called once per frame
@@ -39,6 +41,7 @@ public class BossHealth : MonoBehaviour {
             currHealth -= 1;
             bA.hurtNoise(currHealth);
             StartCoroutine("invincibility");
+            bD.ResetTime();
             Debug.Log(currHealth);
         }
     }
