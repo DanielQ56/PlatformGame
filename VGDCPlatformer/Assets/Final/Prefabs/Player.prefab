@@ -71,7 +71,7 @@ GameObject:
   m_Layer: 0
   m_Name: groundCheck
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -86,7 +86,7 @@ GameObject:
   m_Layer: 0
   m_Name: WallCheck
   m_TagString: Untagged
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -218,7 +218,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1981973538962496}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.1, y: -3.6, z: -2.418236}
+  m_LocalPosition: {x: -6.81, y: 1.58, z: -2.418236}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 4062646638269082}
@@ -396,7 +396,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9dddcb96ffa2143a6a505f6ae3ca1c1e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.407
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -565,6 +565,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fbcc89489ee04899937d3859d0e133f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  seekingBulletPrefab: {fileID: 1515934338914622, guid: 8a80376ab28d17242891c6b0b7beaace,
+    type: 2}
   activated: 0
   started: 0
   defaultTimer: 10
@@ -607,7 +609,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1681703100928452, guid: 0c405613f6a9940e69d6863310c29b71,
     type: 2}
   player: {fileID: 1981973538962496}
-  launchSpeed: 3
+  launchSpeed: 20
   ammoCount: 10
   timeBetweenProj: 0.3333
   projectileSprites:
@@ -760,7 +762,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.28, y: 1.28}
+  m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0

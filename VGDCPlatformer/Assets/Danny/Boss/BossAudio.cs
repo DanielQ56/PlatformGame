@@ -54,18 +54,22 @@ public class BossAudio : MonoBehaviour {
         }
         else
             aud.clip = ouch;
+        if (aud.clip != ouch)
+            aud.volume = 0.75f;
         aud.Play();
     }
 
     public void kickSound()
     {
         aud.clip = kick;
-        aud.Play();
+        if(!aud.isPlaying)
+            aud.Play();
     }
 
     public void throwNetSound()
     {
         aud.clip = throwNet;
-        aud.Play();
+        if(!aud.isPlaying)
+            aud.Play();
     }
 }

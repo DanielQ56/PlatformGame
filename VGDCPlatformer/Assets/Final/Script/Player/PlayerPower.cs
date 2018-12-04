@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerPower : MonoBehaviour
 {
-
+    public GameObject seekingBulletPrefab;
     public Powerup currentPower = null;
     public Powerup powerBeingUsed = null;
     //GameObject power;
@@ -70,10 +70,10 @@ public class PlayerPower : MonoBehaviour
             {
                 reset();
             }
-            else if (powerBeingUsed.getName() == "Seeking Bullet")
+            else if (powerBeingUsed.getName() == "Seeking Bullet" && GameObject.FindGameObjectWithTag("SeekingBullet").GetComponent<SeekingBullet>().hasFired())           
             {
-                //if (GameObject.FindGameObjectWithTag("SeekingBullet").GetComponent<SeekingBullet>().hasFired())
-                    reset();
+                Debug.Log("Fired");
+                reset();
             }
             decrementTimer();
         }
@@ -89,6 +89,7 @@ public class PlayerPower : MonoBehaviour
 
     void reset()
     {
+        Debug.Log("Being reset");
         powerBeingUsed.revert(gameObject);
         revertSprite();
         timer = defaultTimer;
@@ -116,6 +117,17 @@ public class PlayerPower : MonoBehaviour
         powerSprite.transform.localScale = scale;
     }
 
+    public void createSeekingBullet()
+    {
+        Instantiate(seekingBulletPrefab, transform.position, transform.rotation);
+    }
+
+    public void destroySeekingBullet()
+    {
+        if(GameObject.Find("SeekingBullet") != null && !GameObject.Find("SeekingBullet").GetComponent<SeekingBullet>().hasFired())
+            Destroy(GameObject.Find("SeekingBullet"));
+    }
+
     public void newPower(Powerup p)
     {
         if (currentPower == null)
@@ -131,7 +143,7 @@ public class PlayerPower : MonoBehaviour
     private void setSprite()
     {
         powerSprite.sprite = powerBeingUsed.getSprite();
-        Invoke("revertSprite", timer / 3);
+        Invoke("revertSprite", timer/3);
     }
 
     private void revertSprite()

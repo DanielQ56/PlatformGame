@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class BossHealth : MonoBehaviour {
+    public string sceneToLoad;
+
     public int maxHealth;
     public float deathTimer = 2f;
     public float invTime = 0.5f;
@@ -23,14 +25,6 @@ public class BossHealth : MonoBehaviour {
         if (currHealth == 0)
         {
             StartCoroutine("die");
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D collid)
-    {
-        if(collid.tag == "projectile")
-        {
-            gotHit();
         }
     }
 
@@ -62,6 +56,7 @@ public class BossHealth : MonoBehaviour {
         GetComponent<BossAttack>().die();
         yield return new WaitForSeconds(deathTimer);
         Destroy(gameObject);
+        SceneManager.LoadScene(sceneToLoad);
     }
 
     IEnumerator invincibility()

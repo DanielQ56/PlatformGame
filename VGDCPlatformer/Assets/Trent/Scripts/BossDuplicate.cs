@@ -21,7 +21,7 @@ public class BossDuplicate : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         currTime = Time.time - startTime;
-        Debug.Log("Time: " + currTime);
+        //Debug.Log("Time: " + currTime);
         currHealth = bossHealth.currHealth;
         if (currTime >= duplicateTime) {
             Duplicate();

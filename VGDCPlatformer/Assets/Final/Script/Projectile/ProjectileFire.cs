@@ -24,17 +24,20 @@ public class ProjectileFire : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		ammoCount = ammoControl.getCurrentAmmo();
-		//if (Input.GetButtonDown("Fire1")) {
-		//	FireProj();
-		//}
-		if (Input.GetMouseButtonDown(0) && ammoCount > 0 && Time.time >= timestamp) {
-			Vector2 shootDirection;
-			shootDirection=Camera.main.ScreenToWorldPoint(Input.mousePosition)-transform.position;
-			FireDirectedProj(shootDirection);
-			ammoControl.decreaseAmmo(1);
-			timestamp = Time.time + timeBetweenProj;
-		}
-		
+        //if (Input.GetButtonDown("Fire1")) {
+        //	FireProj();
+        //}
+        if (player.GetComponent<PlayerPower>().powerBeingUsed == null || player.GetComponent<PlayerPower>().powerBeingUsed.getName() != "Seeking Bullet")
+        {
+            if (Input.GetMouseButtonDown(0) && ammoCount > 0 && Time.time >= timestamp)
+            {
+                Vector2 shootDirection;
+                shootDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+                FireDirectedProj(shootDirection);
+                ammoControl.decreaseAmmo(1);
+                timestamp = Time.time + timeBetweenProj;
+            }
+        }
 	}
 	
 	public void FireProj() { //for firing only left or right

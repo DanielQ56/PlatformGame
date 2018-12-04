@@ -5,11 +5,8 @@ using UnityEngine;
 public class meleeAttack : MonoBehaviour {
     public float waitTime = 1f;
     // Use this for initialization
-    GameObject player;
-    BossMovement boss;
+
 	void Start () {
-        player = GameObject.FindGameObjectWithTag("Player");
-        boss = transform.parent.GetComponent<BossMovement>();
 	}
 	
 	// Update is called once per frame

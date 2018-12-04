@@ -9,10 +9,9 @@ public class CameraControlTutorial : MonoBehaviour {
 	public float panningSpeed;
 	private Vector3 offset;
 	private bool reachedTarget = false;
-
 	// Use this for initialization
-	void Start () {	
-		//offset = transform.position - player.transform.position;
+	void Start () {
+        //offset = transform.position - player.transform.position;
 	}
 	
 	void LateUpdate () {
@@ -30,4 +29,9 @@ public class CameraControlTutorial : MonoBehaviour {
 		}
 		
 	}
+
+    public bool targetReached()
+    {
+        return reachedTarget;
+    }
 }

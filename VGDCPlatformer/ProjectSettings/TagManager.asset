@@ -17,6 +17,7 @@ TagManager:
   - Boss
   - position
   - CameraBounds
+  - SeekingBullet
   layers:
   - Default
   - TransparentFX

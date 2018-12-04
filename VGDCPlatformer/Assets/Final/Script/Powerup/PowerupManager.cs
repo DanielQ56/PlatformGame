@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public class PowerupManager
 {
     public static PowerupManager manager;
-
     Dictionary<string, Powerup> powers = new Dictionary<string, Powerup>();
     Dictionary<string, int[]> powerProbs = new Dictionary<string, int[]>();
 

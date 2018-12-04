@@ -75,6 +75,7 @@ public class Dumpster : MonoBehaviour
             dumpsterUsed = true;
             StartCoroutine(DoDiveAnimation());
             StopCoroutine(DoDiveAnimation());
+            GetComponent<RespawnPowerup>().used();
         }
         else
         {
@@ -124,5 +125,10 @@ public class Dumpster : MonoBehaviour
         yield return new WaitForSeconds(diveUpSeconds / 1.5f);
         OnTouchSound.volume = defaultVolume;
 
+    }
+
+    public void respawnPowerup()
+    {
+        dumpsterUsed = false;
     }
 }

@@ -14,7 +14,6 @@ public class Powerup
     public virtual string getName() { return name; }
     public virtual void change(GameObject player) { }
     public virtual void revert(GameObject player) { }
-    public virtual void fire() { }
 }
 
 public class Jump : Powerup
@@ -131,13 +130,11 @@ public class Attack : Powerup
 
     public override void change(GameObject player)
     {
-        // TODO 
-        //GameObject.FindGameObjectWithTag("SeekingBullet").GetComponent<SeekingBullet>().activate();
+        player.GetComponent<PlayerPower>().createSeekingBullet();
     }
 
     public override void revert(GameObject player)
     {
-        // TODO 
-        //GameObject.FindGameObjectWithTag("SeekingBullet").GetComponent<SeekingBullet>().deactivate();
+        player.GetComponent<PlayerPower>().destroySeekingBullet();
     }
 }

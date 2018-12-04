@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d961d8f1d0734f6f8d787ecc43f3a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velX: 5
+  velX: 20
   facingRight: 0
 --- !u!114 &114599082554278234
 MonoBehaviour:
