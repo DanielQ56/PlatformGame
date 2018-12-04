@@ -208,11 +208,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4177284347342010, guid: 0b4e1b27a53e844568339b7769ba327d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -6.8092628
+      value: -7.825109
       objectReference: {fileID: 0}
     - target: {fileID: 4177284347342010, guid: 0b4e1b27a53e844568339b7769ba327d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.41175
+      value: 2.4079316
       objectReference: {fileID: 0}
     - target: {fileID: 4177284347342010, guid: 0b4e1b27a53e844568339b7769ba327d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -254,11 +254,11 @@ Prefab:
       objectReference: {fileID: 1343366844}
     - target: {fileID: 4618994938108468, guid: 0b4e1b27a53e844568339b7769ba327d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.8617649
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4618994938108468, guid: 0b4e1b27a53e844568339b7769ba327d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.794114
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4618994938108468, guid: 0b4e1b27a53e844568339b7769ba327d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3356,7 +3356,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: cf37ba0bd1f2a4bc8953a7d232a85a9a, type: 3}
-  m_Color: {r: 0.15686189, g: 0.23584908, b: 0.21566927, a: 1}
+  m_Color: {r: 0.46226418, g: 0, b: 0.03913575, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5374,7 +5374,7 @@ GameObject:
   - component: {fileID: 1683583712}
   m_Layer: 0
   m_Name: Camera Bounds
-  m_TagString: Untagged
+  m_TagString: CameraBounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

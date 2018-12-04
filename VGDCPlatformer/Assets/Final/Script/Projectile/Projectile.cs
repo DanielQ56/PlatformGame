@@ -30,7 +30,7 @@ public class Projectile : MonoBehaviour {
             OnBecameInvisible();
         } 
 		
-		if(collide.tag != "Player") {
+		if(collide.tag != "Player" && collide.tag != "CameraBounds") {
 			Destroy(gameObject);
 		}
 		
