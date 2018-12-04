@@ -25,7 +25,9 @@ public class Projectile : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter2D(Collider2D collide) {
-		if(collide.tag == "hitbox" || collide.tag == "hurtbox") {
+		if(collide.tag == "Boss")
+			collide.gameObject.GetComponentInParent<BossHealth>().hit();
+		else if((collide.tag == "hitbox" || collide.tag == "hurtbox")) {
             collide.gameObject.GetComponentInParent<Enemy>().Die();
             OnBecameInvisible();
         } 

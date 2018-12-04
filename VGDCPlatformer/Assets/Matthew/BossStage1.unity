@@ -5276,6 +5276,21 @@ Prefab:
       propertyPath: startCheckPoint
       value: 
       objectReference: {fileID: 613676559}
+    - target: {fileID: 114945568477937422, guid: fdc49769b96724d40876e05a5a043a56,
+        type: 2}
+      propertyPath: m_speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114010968523927044, guid: fdc49769b96724d40876e05a5a043a56,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114549899858015522, guid: fdc49769b96724d40876e05a5a043a56,
+        type: 2}
+      propertyPath: maxHealth
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdc49769b96724d40876e05a5a043a56, type: 2}
   m_IsPrefabAsset: 0
