@@ -25,35 +25,12 @@ public class Dumpster : MonoBehaviour
     private AudioSource OnTouchSound;
     private float defaultVolume;
 
-    public bool infinitePowerUps = false;
-    public float resetPowerupEveryNthSecond = 20f;
-    private float resetTimer = 0;
-
     void Start()
     {
         dumpsterCollider = GetComponent<BoxCollider2D>(); // For DoDiveAnimation()
         OnTouchSound = GetComponentInChildren<AudioSource>();
         defaultVolume = OnTouchSound.volume;
 
-        if (infinitePowerUps)
-        {
-            resetTimer = 0f;
-        }
-
-    }
-
-    private void Update()
-    {
-        if (infinitePowerUps)
-        {
-            resetTimer += Time.deltaTime;
-            if (resetTimer > resetPowerupEveryNthSecond)
-            {
-                Debug.Log("reset power up");
-                resetTimer = 0f;
-                dumpsterUsed = false;
-            }
-        }
     }
 
     private void FixedUpdate()
