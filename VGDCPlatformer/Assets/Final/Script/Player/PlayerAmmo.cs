@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerAmmo : MonoBehaviour {
@@ -9,14 +10,27 @@ public class PlayerAmmo : MonoBehaviour {
 	public int maxAmmo = 5;
 	public int startingAmmo = 1;
 
+    [Header("Boss Stage")]
+    public int bossStageStartingAmmo = 20;
+    public int bossStageMaxAmmo = 20;
+
 	public int ammoFromDumpster = 3;
 
 	private int currentAmmo;
 
 	// Use this for initialization
 	void Start () {
-		currentAmmo = startingAmmo;
-	}
+        string scene_name = SceneManager.GetActiveScene().name;
+        if (scene_name == "BossStage" || scene_name == "BossStage1")
+        {
+            maxAmmo = bossStageMaxAmmo;
+            currentAmmo = bossStageStartingAmmo;
+        }
+        else
+        {
+            currentAmmo = startingAmmo;
+        }
+    }
 	
 	public bool hasMaxAmmo()
 	{
